@@ -291,7 +291,7 @@ mjx-container[display="true"] + br {
   <div class="widget-wrap">
     <div class="widget">
       <h3 class="widget-title">标签</h3>
-      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/ACM/" rel="tag">ACM</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/CS/" rel="tag">CS</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Math/" rel="tag">Math</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%BD%AE%E9%A1%B6/" rel="tag">置顶</a></li></ul>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/ACM/" rel="tag">ACM</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/CS/" rel="tag">CS</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Math/" rel="tag">Math</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%BD%AE%E9%A1%B6/" rel="tag">置顶</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag">题解</a></li></ul>
     </div>
   </div>
 
@@ -305,7 +305,7 @@ mjx-container[display="true"] + br {
       
         <a class="archive-link" href="/archives/2024/03 ">
           三月 2024 
-          <div class="archive-count">2 </div>
+          <div class="archive-count">4 </div>
         </a>
       
         <a class="archive-link" href="/archives/2024/02 ">
@@ -391,6 +391,168 @@ mjx-container[display="true"] + br {
               
                 <a class="right-panel  non-pic  " 
                       href="/2024/03/02/plan/"
+                        >
+                        
+                            <i class="fa-solid fa-angle-right non-pic"></i>
+                            
+                </a>
+                
+            </div>
+
+            
+
+                  
+    </article>
+
+    
+
+          
+
+  
+  
+
+    <article id="post-NWERC2017" class="h-entry article article-type-post"
+      itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+      
+            <div class="article-inner">
+              <div class="article-main">
+                <header class="article-header">
+                  
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2024/03/18/NWERC2017/">NWERC2017</a>
+      </h1>
+    
+  
+</div>
+
+                    <div class='meta-info-bar'>
+                      <div class="meta-info">
+  <time class="dt-published" datetime="2024-03-18T14:34:13.000Z" itemprop="datePublished">2024-03-18</time>
+</div>
+                        <div class="need-seperator meta-info">
+                          <div class="meta-cate-flex">
+  
+    未分类 
+   
+</div>
+
+                        </div>
+                        <div class="wordcount need-seperator meta-info">
+                          7.1k 词
+                        </div>
+                    </div>
+                    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ACM/" rel="tag">ACM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CS/" rel="tag">CS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag">题解</a></li></ul>
+
+                </header>
+                <div class="e-content article-entry" itemprop="articleBody">
+                  
+                        <div class="truncate-text">
+                          
+                                Northwestern
+European Regional Contest 2017
+0.前言
+写一下周赛的题解，这场打的感觉不太行。
+比赛链接：NWERC
+2017
+1.题目
+A.Ascending Photo
+一道挺奇怪的dp
+首先把原序列离散化，同时连续的一段相同的数合并为一个数，这些操作显然不影响答案。
+我们转换一下问题，我们先把所有数之间都切一刀，考虑最多能选几个位置不切。
+注意到对能不切的位置一定是\(x\)和\(x+1\)之间的位置，且对于所有相邻的\(x\)和\(x+1\)，最多只有一个能不切。
+直接贪是不行的，例如对\([x-1,x,x+1]\)，如果我们选择之间不切那么之间就必须切，前后有影响，因此考虑dp(反悔贪心应该也能做，并且个人感觉这个限制并不强，可能有一些神奇的做法也能过，我回头再想想。)
+我们设\(f_x\)表示只考虑\(h_i \geq h_x\)的数时，把第\(x\)个数放最前面最多能少切几个位置。
+枚举顺序即根据\(h_i\)的大小，从大到小枚举每个数。
+我们根据\(h_x\)是否独特，即只有一个位置值为\(h_x\)来分类讨论。
+同时为了...
+                                  
+                        </div>
+                        
+                </div>
+
+                
+              </div>
+
+              
+                <a class="right-panel  non-pic  " 
+                      href="/2024/03/18/NWERC2017/"
+                        >
+                        
+                            <i class="fa-solid fa-angle-right non-pic"></i>
+                            
+                </a>
+                
+            </div>
+
+            
+
+                  
+    </article>
+
+    
+
+          
+
+  
+  
+
+    <article id="post-Matula" class="h-entry article article-type-post"
+      itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+      
+            <div class="article-inner">
+              <div class="article-main">
+                <header class="article-header">
+                  
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2024/03/13/Matula/">Matula</a>
+      </h1>
+    
+  
+</div>
+
+                    <div class='meta-info-bar'>
+                      <div class="meta-info">
+  <time class="dt-published" datetime="2024-03-12T16:19:27.000Z" itemprop="datePublished">2024-03-13</time>
+</div>
+                        <div class="need-seperator meta-info">
+                          <div class="meta-cate-flex">
+  
+    未分类 
+   
+</div>
+
+                        </div>
+                        <div class="wordcount need-seperator meta-info">
+                          0 词
+                        </div>
+                    </div>
+                    
+                </header>
+                <div class="e-content article-entry" itemprop="articleBody">
+                  
+                        <div class="truncate-text">
+                          
+                                
+                                  
+                        </div>
+                        
+                </div>
+
+                
+              </div>
+
+              
+                <a class="right-panel  non-pic  " 
+                      href="/2024/03/13/Matula/"
                         >
                         
                             <i class="fa-solid fa-angle-right non-pic"></i>
@@ -614,15 +776,15 @@ Update:寄，写完了突然发现和oi-wiki上的几乎一模一样，脑回路
 2.通用解法
 2.1 暴力枚举
 我们用链表储存现有的人，然后暴力枚举。这样做删除的复杂度为，寻找下一个人的复杂度为
-(还有一种实现，对每个元素记录它之前和之后第个元素的编号，每删除一个元素后，对它前m个元素进行修改，删除的复杂度，但个人觉得实现比较复杂)
+(还有一种实现，对每个元素记录它之前和之后第个元素的编号，每删除一个元素后，对它前k个元素进行修改，删除的复杂度，但个人觉得实现比较复杂)
 时间复杂度：
 2.2 数据结构优化
 注意到2.1的瓶颈在于寻找下一个被淘汰的人，我们考虑用数据结构优化。
 我们改用数组存储每个人是否被淘汰，然后用线段树二分在的时间内寻找下一个元素。
 时间复杂度：
-另外，我们也可以用跳表等维护，时间复杂度自己算吧。
+另外，我们也可以用跳表等维护。
 2.3 递推
-这算是一个重点了，我们设...
+这算是一个重点了，我们设表示个人，数到淘汰的...
                                   
                         </div>
                         
