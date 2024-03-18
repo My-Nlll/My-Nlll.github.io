@@ -43,9 +43,7 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
-<meta name="generator" content="Hexo 7.1.1">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<style>mjx-container[jax="SVG"] {
+<meta name="generator" content="Hexo 7.1.1"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -157,7 +155,9 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style></head>
+</style>
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 <body>
   
@@ -464,12 +464,19 @@ A.Ascending Photo
 一道挺奇怪的dp
 首先把原序列离散化，同时连续的一段相同的数合并为一个数，这些操作显然不影响答案。
 我们转换一下问题，我们先把所有数之间都切一刀，考虑最多能选几个位置不切。
-注意到对能不切的位置一定是\(x\)和\(x+1\)之间的位置，且对于所有相邻的\(x\)和\(x+1\)，最多只有一个能不切。
-直接贪是不行的，例如对\([x-1,x,x+1]\)，如果我们选择之间不切那么之间就必须切，前后有影响，因此考虑dp(反悔贪心应该也能做，并且个人感觉这个限制并不强，可能有一些神奇的做法也能过，我回头再想想。)
-我们设\(f_x\)表示只考虑\(h_i \geq h_x\)的数时，把第\(x\)个数放最前面最多能少切几个位置。
-枚举顺序即根据\(h_i\)的大小，从大到小枚举每个数。
-我们根据\(h_x\)是否独特，即只有一个位置值为\(h_x\)来分类讨论。
-同时为了...
+注意到对能不切的位置一定是和之间的位置，且对于所有相邻的和，最多只有一个能不切。
+直接贪是不行的，例如对，如果我们选择之间不切那么之间就必须切，前后有影响，因此考虑dp(反悔贪心应该也能做，并且个人感觉这个限制并不强，可能有一些神奇的做法也能过，我回头再想想。)
+我们设表示只考虑的数时，把第个数放最前面最多能少切几个位置。
+枚举顺序即根据的大小，从大到小枚举每个数。
+我们根据是否独特，即只有一个位置值为来分类讨论。
+同时为了方便叙述，我们设代表所有的位置。
+1.独特
+如果，我们显然可以将和连在一起。
+否则，和在序列中都不相邻，更不可能连在一起。
+所以有
+
+2.不独特
+注意，这里与上面最大的区别是当...
                                   
                         </div>
                         
