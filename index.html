@@ -43,7 +43,9 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
-<meta name="generator" content="Hexo 7.1.1"><style>mjx-container[jax="SVG"] {
+<meta name="generator" content="Hexo 7.1.1">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -155,9 +157,7 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style>
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
+</style></head>
 
 <body>
   
@@ -305,7 +305,7 @@ mjx-container[display="true"] + br {
       
         <a class="archive-link" href="/archives/2024/06 ">
           六月 2024 
-          <div class="archive-count">2 </div>
+          <div class="archive-count">3 </div>
         </a>
       
         <a class="archive-link" href="/archives/2024/03 ">
@@ -315,7 +315,7 @@ mjx-container[display="true"] + br {
       
         <a class="archive-link" href="/archives/2024/02 ">
           二月 2024 
-          <div class="archive-count">2 </div>
+          <div class="archive-count">4 </div>
         </a>
       
     </div>
@@ -396,6 +396,97 @@ mjx-container[display="true"] + br {
               
                 <a class="right-panel  non-pic  " 
                       href="/2024/03/02/plan/"
+                        >
+                        
+                            <i class="fa-solid fa-angle-right non-pic"></i>
+                            
+                </a>
+                
+            </div>
+
+            
+
+                  
+    </article>
+
+    
+
+          
+
+  
+  
+
+    <article id="post-2024SC" class="h-entry article article-type-post"
+      itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+      
+            <div class="article-inner">
+              <div class="article-main">
+                <header class="article-header">
+                  
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2024/06/15/2024SC/">2024SC</a>
+      </h1>
+    
+  
+</div>
+
+                    <div class='meta-info-bar'>
+                      <div class="meta-info">
+  <time class="dt-published" datetime="2024-06-15T10:58:21.000Z" itemprop="datePublished">2024-06-15</time>
+</div>
+                        <div class="need-seperator meta-info">
+                          <div class="meta-cate-flex">
+  
+    未分类 
+   
+</div>
+
+                        </div>
+                        <div class="wordcount need-seperator meta-info">
+                          21k 词
+                        </div>
+                    </div>
+                    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ACM/" rel="tag">ACM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CS/" rel="tag">CS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag">题解</a></li></ul>
+
+                </header>
+                <div class="e-content article-entry" itemprop="articleBody">
+                  
+                        <div class="truncate-text">
+                          
+                                2024四川省赛
+0.前言
+期末周自己VP了一场，赛时过了8题(大概？)，之后补了一下，感觉都可做(主要没有字符串和计算几何)，但好多能做的东西确实感觉有点生疏了，比如K的SOS和C的网络流，都想了好久。
+比赛链接: 2024
+年第十六届四川省大学生程序设计竞赛
+A.逆序对染色
+思维题，想了挺久。
+首先，不难想到肯定要从第一项到最后一项一层一层维护。
+每一层染色的点有点像用一个遮罩遮住了后缀里的数。
+每一层新增的连通块即上一层没有，但这一层有的格子形成的联通块数量。
+那不考虑后缀的改变的话，直接考虑本层联通块数量减去上一层连通块数量即可。
+现在，考虑后缀改变。
+显然，经过第层后，第列的格子永远不会被染色。
+因此，我们不妨将每层前格连通块数量转换到前格不会被染色的格子的连通块数量上。
+容易发现基本上两者是相等的。
+但需要处理最前面和最后面连通块的情况。
+最后面的连通块即考虑不会染色的第列加入后是否会和前面的不会染色的列形成连通块，如果形成，那么染色的连通块就会少。我的做法是先把第列加入不会染色的块，然后如果形成了连通块，那不染色的连通块也自然少了
+最前面的情况就是不会染色的连通块是...
+                                  
+                        </div>
+                        
+                </div>
+
+                
+              </div>
+
+              
+                <a class="right-panel  non-pic  " 
+                      href="/2024/06/15/2024SC/"
                         >
                         
                             <i class="fa-solid fa-angle-right non-pic"></i>
@@ -984,6 +1075,102 @@ Update:寄，写完了突然发现和oi-wiki上的几乎一模一样，脑回路
 
           
 
+  
+  
+
+    <article id="post-CF926" class="h-entry article article-type-post"
+      itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+      
+            <div class="article-inner">
+              <div class="article-main">
+                <header class="article-header">
+                  
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2024/02/18/CF926/">CF926</a>
+      </h1>
+    
+  
+</div>
+
+                    <div class='meta-info-bar'>
+                      <div class="meta-info">
+  <time class="dt-published" datetime="2024-02-18T10:53:10.000Z" itemprop="datePublished">2024-02-18</time>
+</div>
+                        <div class="need-seperator meta-info">
+                          <div class="meta-cate-flex">
+  
+    未分类 
+   
+</div>
+
+                        </div>
+                        <div class="wordcount need-seperator meta-info">
+                          11k 词
+                        </div>
+                    </div>
+                    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ACM/" rel="tag">ACM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CS/" rel="tag">CS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag">题解</a></li></ul>
+
+                </header>
+                <div class="e-content article-entry" itemprop="articleBody">
+                  
+                        <div class="truncate-text">
+                          
+                                CF926 div2
+比赛链接：Codeforces
+Round 926 (Div. 2)
+有点水，但确实是最近CF打的最好的一场了，各种降智操作(这不还是打得不行吗)的前提下，赛时过了5题，赛后5min把最后一道题调好了(其实如果E和F不降智的话感觉能提前AK下班)
+A.Sasha and the Beautiful
+Array
+题目链接：Sasha and the
+Beautiful Array
+显然全加起来为，所以答案为序列中最大值减最小值。
+1234567891011121314151617181920#include&lt;bits/stdc++.h&gt;using namespace std;int main(){	int T=0,n=0,x=0,Ma=0,Mi=0;	scanf("%d",&amp;T);	while(T--)	{		Ma=0;Mi=1e9+7;		scanf("%d",&amp;n);		for(int i=1;i&lt;=n;i++)		{			scanf("%d",&amp;x);			Ma=max(Ma,x);			Mi=min(Mi,x)...
+                                  
+                        </div>
+                        
+                </div>
+
+                
+              </div>
+
+              
+                <a class="right-panel  non-pic  " 
+                      href="/2024/02/18/CF926/"
+                        >
+                        
+                            <i class="fa-solid fa-angle-right non-pic"></i>
+                            
+                </a>
+                
+            </div>
+
+            
+
+                  
+    </article>
+
+    
+
+          
+
+
+  <nav id="page-nav">
+    <!-- 在第二页时 page.prev_link 不知为何无法返回正确的链接 -->
+    <a id="prev-btn" class="page-nav-btn disabled" href=" /  ">
+      <i class="fa-solid fa-angle-left"></i>
+    </a>
+    <div id="num-bar">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a>  
+    </div>
+    <a id="next-btn" class="page-nav-btn " href="/page/2/">
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+  </nav>
 
 
     </div>
