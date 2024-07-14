@@ -43,9 +43,7 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
-<meta name="generator" content="Hexo 7.1.1">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<style>mjx-container[jax="SVG"] {
+<meta name="generator" content="Hexo 7.1.1"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -157,7 +155,9 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style></head>
+</style>
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 <body>
   
@@ -456,6 +456,8 @@ mjx-container[display="true"] + br {
                         </div>
                     </div>
                     
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ACM/" rel="tag">ACM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CS/" rel="tag">CS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Math/" rel="tag">Math</a></li></ul>
+
                 </header>
                 <div class="e-content article-entry" itemprop="articleBody">
                   
@@ -480,11 +482,11 @@ mjx-container[display="true"] + br {
 树为有序树(Ordered Tree)。 2.有序森林:
 森林中每颗树都是有序的，且树之间也是有序的。
 二.问题引入
-在学习生成函数的过程中，我们遇到过这样一个问题：求解不同构的\(n\)个节点的有序\(d\)叉树的个数。而通常的求解是表示出其对应的生成函数后用拉格朗日反演得到答案，即\(\frac{1}{n}{dn\choose n-1
-}\)。注意到当\(d=2\)时，答案就是我们熟知的卡特兰数，但形式略有不同。
-\[\frac{1}{n+1}{2n\choose
-n}=\frac{1}{n}{2n\choose n-1}\]
-我们不妨猜测我们求得的...
+在学习生成函数的过程中，我们遇到过这样一个问题：求解不同构的个节点的有序叉树的个数。而通常的求解是表示出其对应的生成函数后用拉格朗日反演得到答案，即。注意到当时，答案就是我们熟知的卡特兰数，但形式略有不同。
+
+我们不妨猜测我们求得的叉树计数公式应该与二叉树一样具有某种组合意义。(毕竟这种看起来很组合的计数问题却只能通过拉格朗日反演得到答案什么的太怪了)
+Update:
+翻洛谷的时候发现这个结论其实早就有人发现了，但好像没人在意。可以看P2...
                                   
                         </div>
                         
