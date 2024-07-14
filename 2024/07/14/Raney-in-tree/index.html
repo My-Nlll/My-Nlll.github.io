@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet">
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet">
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet">
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+
+  
+  <title>Raney引理在有序树上的应用 | Nlll的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+
+  <meta name="description" content="Raney引理在有序树上的应用 目录: 零.前言 一.约定说明 二.问题引入 三.寻找组合解释 四.应用 五.现在，让我们更进一步 六.森林上的应用 七.一些想法 零.前言 这篇文章写于今年一月份，但因为想在校赛上放一道相关题目(虽然最后也没放)，所以拖到现在才发。 现在重看，感觉当时写的有很多地方不够好，可能等有时间了重置一下吧。 一.约定说明 1.有序树: 若将树中每个结点的各子树看成是从左到">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Raney引理在有序树上的应用">
+<meta property="og:url" content="http://example.com/2024/07/14/Raney-in-tree/index.html">
+<meta property="og:site_name" content="Nlll的博客">
+<meta property="og:description" content="Raney引理在有序树上的应用 目录: 零.前言 一.约定说明 二.问题引入 三.寻找组合解释 四.应用 五.现在，让我们更进一步 六.森林上的应用 七.一些想法 零.前言 这篇文章写于今年一月份，但因为想在校赛上放一道相关题目(虽然最后也没放)，所以拖到现在才发。 现在重看，感觉当时写的有很多地方不够好，可能等有时间了重置一下吧。 一.约定说明 1.有序树: 若将树中每个结点的各子树看成是从左到">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2024/07/14/Raney-in-tree/graph1.png">
+<meta property="og:image" content="http://example.com/2024/07/14/Raney-in-tree/graph2.png">
+<meta property="article:published_time" content="2024-07-14T11:25:46.000Z">
+<meta property="article:modified_time" content="2024-07-14T11:55:53.410Z">
+<meta property="article:author" content="Nlll">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2024/07/14/Raney-in-tree/graph1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Nlll的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-32.png" sizes="32x32">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-128.png" sizes="128x128">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-180.png" sizes="180x180">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-192.png" sizes="192x192">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-32.png" sizes="32x32">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-128.png" sizes="128x128">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-180.png" sizes="180x180">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-192.png" sizes="192x192">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 7.1.1">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="/picture/banner.jpg" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="  ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>Nlll的博客 </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="light-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M438.5-829.913v-48q0-17.452 11.963-29.476 11.964-12.024 29.326-12.024 17.363 0 29.537 12.024t12.174 29.476v48q0 17.452-11.963 29.476-11.964 12.024-29.326 12.024-17.363 0-29.537-12.024T438.5-829.913Zm0 747.826v-48q0-17.452 11.963-29.476 11.964-12.024 29.326-12.024 17.363 0 29.537 12.024t12.174 29.476v48q0 17.452-11.963 29.476-11.964 12.024-29.326 12.024-17.363 0-29.537-12.024T438.5-82.087ZM877.913-438.5h-48q-17.452 0-29.476-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537t29.476-12.174h48q17.452 0 29.476 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T877.913-438.5Zm-747.826 0h-48q-17.452 0-29.476-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537T82.087-521.5h48q17.452 0 29.476 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T130.087-438.5Zm660.174-290.87-34.239 32q-12.913 12.674-29.565 12.174-16.653-.5-29.327-13.174-12.674-12.673-12.554-28.826.12-16.152 12.794-28.826l33-35q12.913-12.674 30.454-12.674t30.163 12.847q12.709 12.846 12.328 30.826-.38 17.98-13.054 30.653ZM262.63-203.978l-32 34q-12.913 12.674-30.454 12.674t-30.163-12.847q-12.709-12.846-12.328-30.826.38-17.98 13.054-30.653l33.239-31q12.913-12.674 29.565-12.174 16.653.5 29.327 13.174 12.674 12.673 12.554 28.826-.12 16.152-12.794 28.826Zm466.74 33.239-32-33.239q-12.674-12.913-12.174-29.565.5-16.653 13.174-29.327 12.673-12.674 28.826-13.054 16.152-.38 28.826 12.294l35 33q12.674 12.913 12.674 30.454t-12.847 30.163q-12.846 12.709-30.826 12.328-17.98-.38-30.653-13.054ZM203.978-697.37l-34-33q-12.674-12.913-13.174-29.945-.5-17.033 12.174-29.707t31.326-13.293q18.653-.62 31.326 13.054l32 34.239q11.674 12.913 11.174 29.565-.5 16.653-13.174 29.327-12.673 12.674-28.826 12.554-16.152-.12-28.826-12.794ZM480-240q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm-.247-82q65.703 0 111.475-46.272Q637-414.544 637-480.247t-45.525-111.228Q545.95-637 480.247-637t-111.475 45.525Q323-545.95 323-480.247t45.525 111.975Q414.05-322 479.753-322ZM481-481Z"/></svg></span>
+      <span class="dark-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M480.239-116.413q-152.63 0-258.228-105.478Q116.413-327.37 116.413-480q0-130.935 77.739-227.435t206.304-125.043q43.022-9.631 63.87 10.869t3.478 62.805q-8.891 22.043-14.315 44.463-5.424 22.42-5.424 46.689 0 91.694 64.326 155.879 64.325 64.186 156.218 64.186 24.369 0 46.978-4.946 22.609-4.945 44.413-14.076 42.826-17.369 62.967 1.142 20.142 18.511 10.511 61.054Q807.174-280 712.63-198.206q-94.543 81.793-232.391 81.793Zm0-95q79.783 0 143.337-40.217 63.554-40.218 95.793-108.283-15.608 4.044-31.097 5.326-15.49 1.283-31.859.805-123.706-4.066-210.777-90.539-87.071-86.473-91.614-212.092-.24-16.369.923-31.978 1.164-15.609 5.446-30.978-67.826 32.478-108.282 96.152Q211.652-559.543 211.652-480q0 111.929 78.329 190.258 78.329 78.329 190.258 78.329ZM466.13-465.891Z"/></svg></span>
+    </a>
+    
+      <a id="nav-rss-link" class="nav-icon mobile-hide" href="/atom.xml" title="RSS 订阅">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M198-120q-25.846 0-44.23-18.384-18.384-18.385-18.384-44.23 0-25.846 18.384-44.23 18.384-18.385 44.23-18.385 25.846 0 44.23 18.385 18.384 18.384 18.384 44.23 0 25.845-18.384 44.23Q223.846-120 198-120Zm538.385 0q-18.846 0-32.923-13.769-14.076-13.769-15.922-33.23-8.692-100.616-51.077-188.654-42.385-88.039-109.885-155.539-67.5-67.501-155.539-109.885Q283-663.462 182.385-672.154q-19.461-1.846-33.23-16.23-13.769-14.385-13.769-33.846t14.076-32.922q14.077-13.461 32.923-12.23 120.076 8.692 226.038 58.768 105.961 50.077 185.73 129.846 79.769 79.769 129.846 185.731 50.077 105.961 58.769 226.038 1.231 18.846-12.538 32.922Q756.461-120 736.385-120Zm-252 0q-18.231 0-32.423-13.461t-18.653-33.538Q418.155-264.23 348.886-333.5q-69.27-69.27-166.501-84.423-20.077-4.462-33.538-18.961-13.461-14.5-13.461-33.346 0-19.076 13.884-33.23 13.884-14.153 33.115-10.922 136.769 15.384 234.384 112.999 97.615 97.615 112.999 234.384 3.231 19.23-10.538 33.115Q505.461-120 484.385-120Z"/></svg>
+      </a>
+    
+    <div id="nav-menu-btn" class="nav-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M177.37-252.282q-17.453 0-29.477-11.964-12.024-11.963-12.024-29.326t12.024-29.537q12.024-12.174 29.477-12.174h605.26q17.453 0 29.477 11.964 12.024 11.963 12.024 29.326t-12.024 29.537q-12.024 12.174-29.477 12.174H177.37Zm0-186.218q-17.453 0-29.477-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537T177.37-521.5h605.26q17.453 0 29.477 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T782.63-438.5H177.37Zm0-186.217q-17.453 0-29.477-11.964-12.024-11.963-12.024-29.326t12.024-29.537q12.024-12.174 29.477-12.174h605.26q17.453 0 29.477 11.964 12.024 11.963 12.024 29.326t-12.024 29.537q-12.024 12.174-29.477 12.174H177.37Z"/></svg>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">Home</a>
+    
+      <a class="nav-dropdown-link" href="/archives">Archives</a>
+    
+      <a class="nav-dropdown-link" href="/about">About</a>
+    
+    
+      <a class="nav-dropdown-link" href="/atom.xml" title="RSS 订阅">RSS</a>
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/picture/avatar.jpg></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">Nlll </div>
+      <div class="dot"></div>
+      <div class="subtitle">My compass is curiosity. </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://twitter.com" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://store.steampowered.com" title="Steam"><i class="fa-brands fa-steam"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com" title="GitHub"><i class="fa-brands fa-github"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">分类</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/CS/">
+                CS
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/CS/ACM/">
+                ACM
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/CS/ACM/%E6%95%B0%E5%AD%A6/">
+                数学
+                <div class="category-count">1</div>
+            </a>
+        </div></div></div></div></div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">标签</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/ACM/" rel="tag">ACM</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/CS/" rel="tag">CS</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Math/" rel="tag">Math</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/plan/" rel="tag">plan</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B8%B8%E8%AE%B0/" rel="tag">游记</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%BD%AE%E9%A1%B6/" rel="tag">置顶</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag">题解</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">归档</h3>
+      
+      
+        <a class="archive-link" href="/archives/2024/07 ">
+          七月 2024 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2024/06 ">
+          六月 2024 
+          <div class="archive-count">3 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2024/03 ">
+          三月 2024 
+          <div class="archive-count">4 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2024/02 ">
+          二月 2024 
+          <div class="archive-count">4 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+      
+  
+
+    <article id="post-Raney-in-tree" class="h-entry article article-type-post"
+      itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+      
+        
+          
+            <div class="article-inner">
+              <div class="article-main">
+                <header class="article-header">
+                  
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        Raney引理在有序树上的应用
+      </h1>
+    
+  
+</div>
+
+                    <div class='meta-info-bar'>
+                      <div class="meta-info">
+  <time class="dt-published" datetime="2024-07-14T11:25:46.000Z" itemprop="datePublished">2024-07-14</time>
+</div>
+                        <div class="need-seperator meta-info">
+                          <div class="meta-cate-flex">
+  
+    未分类 
+   
+</div>
+
+                        </div>
+                        <div class="wordcount need-seperator meta-info">
+                          7.5k 词
+                        </div>
+                    </div>
+                    
+                </header>
+                <div class="e-content article-entry" itemprop="articleBody">
+                  
+                          <h1 id="raney引理在有序树上的应用">Raney引理在有序树上的应用</h1>
+<h2 id="目录">目录:</h2>
+<p>零.前言</p>
+<p>一.约定说明</p>
+<p>二.问题引入</p>
+<p>三.寻找组合解释</p>
+<p>四.应用</p>
+<p>五.现在，让我们更进一步</p>
+<p>六.森林上的应用</p>
+<p>七.一些想法</p>
+<h3 id="零.前言">零.前言</h3>
+<p>这篇文章写于今年一月份，但因为想在校赛上放一道相关题目(虽然最后也没放)，所以拖到现在才发。</p>
+<p>现在重看，感觉当时写的有很多地方不够好，可能等有时间了重置一下吧。</p>
+<h3 id="一.约定说明">一.约定说明</h3>
+<p>1.有序树:
+若将树中每个结点的各子树看成是从左到右有次序的(即不能互换)，则称该
+树为有序树(Ordered Tree)。 2.有序森林:
+森林中每颗树都是有序的，且树之间也是有序的。</p>
+<h3 id="二.问题引入">二.问题引入</h3>
+<p>在学习生成函数的过程中，我们遇到过这样一个问题：求解不同构的<span class="math inline">\(n\)</span>个节点的有序<span class="math inline">\(d\)</span>叉树的个数。而通常的求解是表示出其对应的生成函数后用拉格朗日反演得到答案，即<span class="math inline">\(\frac{1}{n}{dn\choose n-1
+}\)</span>。注意到当<span class="math inline">\(d=2\)</span>时，答案就是我们熟知的卡特兰数，但形式略有不同。</p>
+<p><span class="math display">\[\frac{1}{n+1}{2n\choose
+n}=\frac{1}{n}{2n\choose n-1}\]</span></p>
+<p>我们不妨猜测我们求得的<span class="math inline">\(d\)</span>叉树计数公式应该与二叉树一样具有某种组合意义。(<del>毕竟这种看起来很组合的计数问题却只能通过拉格朗日反演得到答案什么的太怪了</del>)</p>
+<p><strong>Update</strong>:
+翻洛谷的时候发现这个结论其实早就有人发现了，但好像没人在意。可以看<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2767">P2767</a> pufanyi
+的题解。</p>
+<h3 id="三.寻找组合解释">三.寻找组合解释</h3>
+<h4 id="dnchoose-n-1部分">1.<span class="math inline">\({dn\choose
+n-1}\)</span>部分</h4>
+<p>众所周知，组合数的意义即是从<span class="math inline">\(n\)</span>个元素中无序地选择<span class="math inline">\(m\)</span>个元素。暴力地套在公式中的组合数上，我们可以得到<span class="math inline">\(d\)</span>叉树的计数公式的主要部分即从<span class="math inline">\(dn\)</span>个元素中无序地选取<span class="math inline">\(n-1\)</span>个元素。我们很容易联想到<span class="math inline">\(n-1\)</span>应该与树的<span class="math inline">\(n-1\)</span>条边有关，那么<span class="math inline">\(dn\)</span>就因该指d叉树中所有可能的<span class="math inline">\(dn\)</span>条边。但注意到，想要使<span class="math inline">\(dn\)</span>条边不等价，我们需要为每个点赋予不同的编号。综上，我们可以认为，<span class="math inline">\({dn\choose
+n-1}\)</span>部分代表我们以某种特定的方式为每个点赋予编号后从每个点可能的<span class="math inline">\(d\)</span>条边中共选取<span class="math inline">\(n-1\)</span>条作为树边的方案数。</p>
+<h4 id="给点分配编号的方法">2.给点分配编号的方法</h4>
+<p>考虑如何按照某种规则使得每颗<span class="math inline">\(d\)</span>叉树上的点都具有编号。不难想到，根据树的有序性，我们考虑按照边的顺序从前往后来dfs遍历每个点，这样得到的dfs序就是唯一确定的。
+PS：这种方法实际上并不要求我们一定要让每条边初始时都有先后顺序。例如依存树，其左区域和右区域中边有顺序，而我们可以规定先访问左区域中的边在访问右区域的边，这样也可以确定唯一的顺序，总而言之，一颗有序树因为它的边互不等价，我们总可以规定一种唯一的顺序。</p>
+<h4 id="frac1n部分">3.<span class="math inline">\(\frac{1}{n}\)</span>部分</h4>
+<p>终于，我们来到问题最关键的一部分了，先让我们想想为什么会有这个系数。答案很显然，不是每种选择边的方案都会使构成的树合法。
+例如，我们考虑一颗<span class="math inline">\(5\)</span>个节点的二叉树，其中第<span class="math inline">\(i\)</span>条边代表结点<span class="math inline">\(i\)</span>的左边，第<span class="math inline">\(5+i\)</span>条边代表结点i的右边。则选取 1，3，6，8
+对应的树如下图，是合法的。</p>
+<div data-align="center">
+<figure>
+<img src="graph1.png" alt="合法情况">
+<figcaption aria-hidden="true">合法情况</figcaption>
+</figure>
+</div>
+<p>而选取 1，4，6，9 对应的树如下图，是不合法的。</p>
+<div data-align="center">
+<figure>
+<img src="graph2.png" alt="不合法情况">
+<figcaption aria-hidden="true">不合法情况</figcaption>
+</figure>
+</div>
+<p>我们考虑用从<span class="math inline">\(1\)</span>到<span class="math inline">\(n\)</span>加点的方式构造，那么显然不合法的原因就是<span class="math inline">\(n\)</span>个点在全部加入前，某些点已经形成了一颗树。我们想要证明，有办法把所有情况分组，每组有<span class="math inline">\(n\)</span>种情况且每组中有且仅有<span class="math inline">\(1\)</span>种情况是合法的。不妨猜测，有一种分组方案可以使这<span class="math inline">\(n\)</span>种情况有某些关联。</p>
+<p>实际上，一种满足要求的分组方案如下，我们任意选取一种方案，如
+1，4，6，9 将其改记为每个点有的边，即 1：左 右 ，2：空 ，3：空 ，4：左
+右 ，5：空 然后让每个点拥有的边做轮换，即变成 1：空 ，2：左 右 ，3：空
+，4：空 ，5：左 右
+这样不断轮换可以得到n种情况，把这n种情况分为一组，那么
+1，4，6，9对应的组为&lt; 1，4，6，9 &gt;，&lt; 2，5，7，10 &gt;，&lt;
+1，3，6，8 &gt;，&lt; 2，4，7，9 &gt;，&lt; 3，5，8，10&gt;</p>
+<p>显然其中只有&lt; 1，3，6，8 &gt;是合法的。</p>
+<p>下面是其正确性的证明：</p>
+<p>首先，我们仿照卡特兰数的证明，将问题转换。考虑我们还能加入的点的数量，记其为<span class="math inline">\(s\)</span>，初始时<span class="math inline">\(s=1\)</span>(我们加入的第一个点就是根节点，也可以想象这里有一条虚边)。当我们加入一个有<span class="math inline">\(x\)</span>条边的点后，<span class="math inline">\(s\)</span>会加上<span class="math inline">\(x-1\)</span>(因为新加的点占用了一条边，同时它有<span class="math inline">\(x\)</span>条新的边)。显然，当所有边加入后，<span class="math inline">\(s=0\)</span>。如果还有点没有加入时，<span class="math inline">\(s \leq
+0\)</span>，那么这种情况就是不合法的，因为它代表加入部分点后，所有的边已经被点占用，即已经形成了一颗树。
+现在，我们就可以把点抽象为一个值，且所有值的总和为<span class="math inline">\(-1\)</span>，初始时<span class="math inline">\(s=0\)</span>，合法方案为加入最后一个值前始终有<span class="math inline">\(s \geq 0\)</span>(这里为了方便证明，把<span class="math inline">\(s\)</span>的初始值改为<span class="math inline">\(0\)</span>，终点改为<span class="math inline">\(-1\)</span>)。我们接下来证明按上述方法分组后，每组一定有且仅有一种方案合法。</p>
+<p><strong>Update：以下内容其实就是Raney定理，这里用该定理直接就可以证明了。</strong></p>
+<p>我们可以把<span class="math inline">\(n\)</span>个点排成一个有顺序的环，然后定义起点为第一个加入的点的前面一个点，那么上述分组意味着我们可以选择任意一个点为起点，按顺序加值，直到把起点对应的值加上。</p>
+<p>先证至少有一个合法方案，我们先随便选择一种方案①，起点记为<span class="math inline">\(A\)</span>，若其合法，则成立，否则，设其过程中<span class="math inline">\(s\)</span>的最小值为<span class="math inline">\(a(a \leq -1)\)</span>，然后以最先使<span class="math inline">\(s=a\)</span>的点为起点，记该点为<span class="math inline">\(P\)</span>，记这种方案为方案②。设方案②中某点<span class="math inline">\(s\)</span>值为<span class="math inline">\(x\)</span>，方案①中某点<span class="math inline">\(s\)</span>值为<span class="math inline">\(y\)</span>(<span class="math inline">\(x\)</span>，<span class="math inline">\(y\)</span>代表同一点在不同方案下<span class="math inline">\(s\)</span>的值)，我们有<span class="math inline">\(y \geq a\)</span>。<span class="math inline">\((P,A]\)</span>的这一段，因为<span class="math inline">\(P\)</span>的值从<span class="math inline">\(a\)</span>变为<span class="math inline">\(0\)</span>，所以<span class="math inline">\(x=y+(0-a)=y-a \geq 0\)</span>。加入<span class="math inline">\(A\)</span>点后，<span class="math inline">\(x=-1-a
+\geq 0\)</span>，因为<span class="math inline">\(P\)</span>是方案中从<span class="math inline">\(A\)</span>开始最先使<span class="math inline">\(s=a\)</span>的且<span class="math inline">\(y \geq
+a\)</span>，所以在<span class="math inline">\((A,P)\)</span>这一段中<span class="math inline">\(y \geq a+1，x=-1-a+y \geq
+0\)</span>。最后加入A点后，<span class="math inline">\(x=-1\)</span>，综上，方案②中<span class="math inline">\(s\)</span>在加上<span class="math inline">\(A\)</span>点值前始终<span class="math inline">\(\geq 0\)</span>，是合法方案。</p>
+<p>再证最多只有一种合法方案。假设存在两种合法方案①和②，记方案①的起点为<span class="math inline">\(A\)</span>，方案②的起点为<span class="math inline">\(B\)</span>，设方案①中某点<span class="math inline">\(s\)</span>值为<span class="math inline">\(x\)</span>，方案②中某点<span class="math inline">\(s\)</span>值为<span class="math inline">\(y\)</span>。</p>
+<p>设加入<span class="math inline">\(B\)</span>点时<span class="math inline">\(x=a\)</span>，由方案①的合法性得<span class="math inline">\(a \geq 0\)</span>，则加入<span class="math inline">\(A\)</span>点时<span class="math inline">\(x=-1，y=x-a+0=-1-a &lt;
+0\)</span>，又因为此时方案②未加入所有点，所以方案②显然不合法，矛盾。因此，最多存在一种合法方案。</p>
+<p>综上，我们证明了<span class="math inline">\(\frac{1}{n}\)</span>系数的正确性。</p>
+<h4 id="总结">4.总结</h4>
+<p>经过一些抽象的证明，我们终于找到了<span class="math inline">\(d\)</span>叉树计数公式的组合意义，但这显然不是我们费劲千辛万苦所得到结论的唯一用处。</p>
+<p>实际上，注意<span class="math inline">\(\frac{1}{n}\)</span>系数的证明，我们其实并没有用到有关<span class="math inline">\(d\)</span>叉树的性质，这一结论对任意有序树都是成立的。也就是说，我们可以极大地扩展该结论的应用场景。</p>
+<p>只要树是有根有序的(为了能给每个结点唯一编号)，且我们可以保证把任意一种边的方案作轮换后依然是一种可行的分配边的方案(保证<span class="math inline">\(\frac{1}{n}\)</span>系数)，我们都可以通过乘上<span class="math inline">\(\frac{1}{n}\)</span>的系数把树的计数问题转换为给<span class="math inline">\(n\)</span>个不同结点分配<span class="math inline">\(n-1\)</span>条边的问题，当然，不同的树会有不同的限制。</p>
+<p>总而言之，通过这个只需简单的组合知识就可以证明的结论，我们可以把一类有根有序树的计数问题转化为有限制地把<span class="math inline">\(n-1\)</span>个相同小球装进<span class="math inline">\(n\)</span>个不同盒子。</p>
+<h3 id="四.应用">四.应用</h3>
+<p>PS：注意使用隔板法时，若盒子数<span class="math inline">\(\leq
+0\)</span>，要考虑其实际意义，基本上只要把隔板法的<span class="math inline">\({-1\choose -1}\)</span>当作<span class="math inline">\(1\)</span>，其它含有负数的情况当作0就行。</p>
+<h4 id="依存树计数">1.依存树计数</h4>
+<p>问题：不同的<span class="math inline">\(n\)</span>个结点依存树的个数</p>
+<p>先给出依存树的一个简单定义：依存树（Dependency
+trees）可以定义为由一个根节点、若干棵左子树和若干棵右子树构成(所有左子树或右子树间有顺序)，其中所有子树都是依存树。</p>
+<p>转换为球盒问题，结点对应盒，边对应球。注意到结点的边可以属于两个不同的区域，我们不妨想象一个盒子中也有两个不同的区域可以放球，这本质上就等价于<span class="math inline">\(2n\)</span>个不同的盒子，而我们共有<span class="math inline">\(n-1\)</span>个相同的球，由隔板法得方案数为<span class="math inline">\({3n-2\choose 2n-1}\)</span>。</p>
+<p>然后把转换后问题的方案数再乘上<span class="math inline">\(\frac{1}{n}\)</span>的系数，得到答案为<span class="math inline">\(\frac{1}{n}{3n-2\choose 2n-1}\)</span></p>
+<h4 id="多叉树有根有序树计数">2.多叉树(有根有序树)计数</h4>
+<p>多叉树就是一颗没有限制的有根有序树，转化后就是把<span class="math inline">\(n-1\)</span>个相同小球，放进<span class="math inline">\(n\)</span>个不同盒子，用隔板法得到答案为<span class="math inline">\({2n-2\choose n-1}\)</span>。</p>
+<p>所以<span class="math inline">\(n\)</span>个结点的多叉树个数为<span class="math inline">\(\frac{1}{n}{2n-2\choose n-1}\)</span>。</p>
+<p>PS：其实用多叉树与二叉树的转换也可以做，注意转换后的二叉树根节点一定只有左儿子，就相当于<span class="math inline">\(n-1\)</span>个结点的二叉树。 ####
+3.限制叶子结点数量的有根有序树计数</p>
+<p>问题：<span class="math inline">\(n\)</span>个结点的有根有序树且恰有<span class="math inline">\(k\)</span>个叶子结点的个数。</p>
+<p>仍然是变为球盒问题，我们先选出<span class="math inline">\(k\)</span>个盒子不放球，方案数为<span class="math inline">\({n\choose k}\)</span>，然后将<span class="math inline">\(n-1\)</span>个相同球放入剩下的<span class="math inline">\(n-k\)</span>个盒子中，且没有空盒子，由隔板法得方案数为<span class="math inline">\({n-2\choose n-k-1}\)</span>。</p>
+<p>因此答案为<span class="math inline">\(\frac{1}{n}{n\choose
+k}{n-2\choose n-k-1}\)</span>。</p>
+<p>PS：当<span class="math inline">\(n=k\)</span>时，放球的盒子数为<span class="math inline">\(0\)</span>，不能直接用隔板法，要特判一下，若<span class="math inline">\(n=k=1\)</span>则答案为<span class="math inline">\(1\)</span>，否则为<span class="math inline">\(0\)</span>。</p>
+<h4 id="限制度数为dd-neq-0的结点数量的有根有序树计数">4.限制度数为<span class="math inline">\(d(d \neq
+0)\)</span>的结点数量的有根有序树计数</h4>
+<p>问题：<span class="math inline">\(n\)</span>个结点的有根有序树，且度数为<span class="math inline">\(d(d \neq 0)\)</span>的结点恰有<span class="math inline">\(k\)</span>个的个数。</p>
+<p>考虑一般化容斥，目标函数<span class="math inline">\(G(x)=\frac{1}{k!}x^k\)</span>，通过<span class="math inline">\(P=e^{-x} \cdot G\)</span>，得到系数函数<span class="math inline">\(P(x)\)</span>，有<span class="math inline">\([x^n]P(x)=(-1)^{x-k}{x\choose
+k}\)</span>，然后至少有<span class="math inline">\(i\)</span>个度数为<span class="math inline">\(d\)</span>的结点的方案数为<span class="math inline">\({n\choose i}{2n-i-id-2\choose
+n-i-1}\)</span>，所以方案数为$ _{i=k}^{
+}(-1)^{i-k}{ik}{ni}{2n-i-id-2n-i-1}$。</p>
+<p>答案为<span class="math inline">\(\frac{1}{n} \sum_{i=k}^{ \lfloor
+\frac{n-1}{d} \rfloor }(-1)^{i-k}{i\choose k}{n\choose
+i}{2n-i-id-2\choose n-i-1}\)</span></p>
+<p>特例：注意<span class="math inline">\({2n-i-id-2\choose
+n-i-1}\)</span>中有负数的组合数计算，<span class="math inline">\({-1\choose -1}\)</span>当作<span class="math inline">\(1\)</span>，除了<span class="math inline">\({-1\choose -1}\)</span>都当作<span class="math inline">\(0\)</span>，这是为了保证它作为隔板法的实际意义</p>
+<h4 id="一些更复杂的问题不给过程">5.一些更复杂的问题(不给过程)</h4>
+<p>我们还可以来回答一些更复杂的问题。</p>
+<p>1.恰有<span class="math inline">\(c\)</span>个叶子结点，且度数为<span class="math inline">\(d(d \neq 0)\)</span>的结点恰有<span class="math inline">\(k\)</span>个的有根有序树计数</p>
+<p>公式：<span class="math inline">\(\frac{1}{n}{n\choose
+c}\sum_{i=k}^{min \{ n-c,\lfloor \frac{n-1}{d} \rfloor \} }
+(-1)^{i-k}{i\choose k}{n-c\choose i}{n-id-2\choose n-i-c-1}\)</span></p>
+<p>特例：注意<span class="math inline">\({n-id-2\choose
+n-i-c-1}\)</span>中有负数的组合数计算，<span class="math inline">\({-1\choose -1}\)</span>当作<span class="math inline">\(1\)</span>，除了<span class="math inline">\({-1\choose -1}\)</span>都当作<span class="math inline">\(0\)</span>，这是为了保证它作为隔板法的实际意义</p>
+<p>PS：其实<span class="math inline">\(\sum\)</span>的上限写成<span class="math inline">\(n\)</span>或者直接到<span class="math inline">\(+\infty\)</span>好像也行，应用4也同理，但没什么必要。</p>
+<p>2.对每个<span class="math inline">\(i(0 \leq i \leq
+n-1)\)</span>，度数为<span class="math inline">\(i\)</span>的结点至少有<span class="math inline">\(c_i\)</span>个的有根有序树计数</p>
+<p>公式：<span class="math inline">\(\frac{1}{n}{2n-(\sum_{i=1}^{n-1}c_i)-2\choose
+n-(\sum_{i=1}^{n-1}c_i)-1}{n\choose{c_0,c_1,\cdots,c_{n-1}}}\)</span></p>
+<h4 id="有m个限制第i个限制为度数为d_i的结点恰有c_i个的有根有序树计数">6.有<span class="math inline">\(m\)</span>个限制，第<span class="math inline">\(i\)</span>个限制为度数为<span class="math inline">\(d_i\)</span>的结点恰有<span class="math inline">\(c_i\)</span>个的有根有序树计数</h4>
+<p>我们记给定的<span class="math inline">\(d_i\)</span>的集合为<span class="math inline">\(S\)</span>，没有给定的度数的集合为<span class="math inline">\(T\)</span>。</p>
+<p>问题转换不再叙述。</p>
+<p>设<span class="math inline">\(N=n-\sum_{i \in T}
+c_i,M=n-1-|S|\)</span>，问题变为总度数为<span class="math inline">\(N\)</span>，点的数量为<span class="math inline">\(M\)</span>，且每个点度数不为<span class="math inline">\(S\)</span>中的元素，或者说必须为<span class="math inline">\(T\)</span>中元素。</p>
+<p>设<span class="math inline">\(|T|=k\)</span>，第<span class="math inline">\(i\)</span>种元素的数量为<span class="math inline">\(n_i\)</span>，度数为<span class="math inline">\(d_i\)</span>。</p>
+<p><strong>Update</strong>:
+其实最后答案的式子直接考虑组合意义就能得到，用EGF纯属当初傻了，但懒得改了。</p>
+<p>得到以下式子：</p>
+<p><span class="math display">\[\begin{aligned}
+Ans=\sum_{\sum n_i=M \And \sum d_i n_i = N }
+{M\choose{n_1,n_2,\cdots,n_k}}
+\end{aligned}\]</span></p>
+<p>考虑EGF形式：</p>
+<p><span class="math display">\[\begin{aligned}
+Ans&amp;=[\frac{x^M}{M!} y^N] \prod_{i=1}^{k} \sum_{j \geq 0} \frac{x^j
+y^{d_i j}}{j!} \\
+&amp;=[\frac{x^M}{M!} y^N] \prod_{i=1}^{k} e^{x y^{d_i}} \\
+&amp;=[\frac{x^M}{M!} y^N] e^{x(\sum_{i=1}^{k} y^{d_i})} \\
+&amp;=[y^N] (\sum_{i=1}^{k} y^{d_i})^{M}
+\end{aligned}\]</span></p>
+<p>然后多项式快速幂 / 取log算就行了。</p>
+<p>答案为：</p>
+<p><span class="math display">\[\begin{aligned}
+\frac{1}{n} {n\choose{c_1,c_2,\cdots,c_{|S|}}} [y^N] (\sum_{i=1}^{k}
+y^{d_i})^{M}
+\end{aligned}\]</span></p>
+<h4 id="luogu-p7592-数树2021-coe-ii-e">7.Luogu P7592 数树（2021 CoE-II
+E）</h4>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P7592">P7592
+数树</a></p>
+<p>突然发现一道可以用结论切的黑题。</p>
+<p>显然，加上我们舍掉的非法情况后得分的期望不会改变，因此直接看成球盒问题就行了。</p>
+<p><span class="math inline">\(n-1\)</span>个相同的球，放入<span class="math inline">\(n\)</span>个不同盒子，每个盒子只能放<span class="math inline">\(k_1\)</span>或<span class="math inline">\(k_2\)</span>个球，且得分分别为<span class="math inline">\(a\)</span>和<span class="math inline">\(b\)</span>，求期望得分。</p>
+<p>我们设放了<span class="math inline">\(k_1\)</span>个球的盒子有<span class="math inline">\(i\)</span>个，放了<span class="math inline">\(k_2\)</span>个球的盒子有<span class="math inline">\(j\)</span>个，显然，对于每个可能的<span class="math inline">\(i\)</span>都有唯一的<span class="math inline">\(j\)</span>，因此直接枚举<span class="math inline">\(i\)</span>就可以，时间复杂度<span class="math inline">\(O(n)\)</span>，式子如下：</p>
+<p><span class="math display">\[\frac {\sum_{i+j=n-1} {n\choose
+i}{n-i\choose j}(ai+bj)}{\sum_{i+j=n-1} {n\choose i}{n-i\choose
+j}}\]</span></p>
+<h3 id="五.现在让我们更进一步">五.现在，让我们更进一步</h3>
+<p>首先，我们详细说明一下上文可以用Raney引理证明的地方。</p>
+<p>我们应该反过来考虑，这样就保证了所有操作<span class="math inline">\((1,x)\)</span>的<span class="math inline">\(y\)</span>轴和<span class="math inline">\(\sum x =
+1\)</span>，并且，注意到这产生了一个新的性质<span class="math inline">\(x \leq 1\)</span></p>
+<p>(其实你可以发现我们可以让树的儿子个数不为整数，但我不知道这能被赋予什么意义，可能类似矩阵树的一些题，和概率有关？)</p>
+<p>然后，我们可以根据Raney引理的一个扩展形式来得到新的结论。</p>
+<p>扩展形式见<a target="_blank" rel="noopener" href="https://xyix.github.io/posts/?searchfor=%E5%B9%BF%E4%B9%89&amp;postname=generalized-binomial-exponential">广义二项/指数级数？广义卡塔兰/凯莱数！</a></p>
+<p>这告诉我们，如果我们把终点改为<span class="math inline">\((n,m)\)</span>，则只需将系数从<span class="math inline">\(\frac{1}{n}\)</span>变为<span class="math inline">\(\frac{m}{n}\)</span>即可。</p>
+<p>那么这对应了什么呢？</p>
+<p>不难想到，这代表了一个具有<span class="math inline">\(m\)</span>颗树的有序森林，其中森林有序是指森林中树之间有顺序。</p>
+<p>所以，我们可以把上述树的计数放到森林上去做，所改变的不过是一个系数。</p>
+<h3 id="六.森林上的应用">六.森林上的应用</h3>
+<h3 id="七.一些想法">七.一些想法</h3>
+<p>贴一些感兴趣的文章的链接：</p>
+<p>https://x-yi-x.blog.uoj.ac/blog/6511</p>
+<p>https://www.luogu.com/article/mqa5ibwe</p>
+<p><strong>Update</strong>:稍微写一下<strong>应用3</strong>的拉格朗日反演写法。</p>
+<p>设<span class="math inline">\(F\)</span>为方案数的GF，<span class="math inline">\(x\)</span>用于计量结点个数，<span class="math inline">\(y\)</span>用于计量叶子结点个数。</p>
+<p>有</p>
+<p><span class="math display">\[\begin{aligned}
+F&amp;=x(y+F+F^2+F^3+\cdots) \\
+&amp;=x(y+\frac{F}{1-F})
+\end{aligned}\]</span></p>
+<p>对<span class="math inline">\(x\)</span>用拉格朗日反演得</p>
+<p><span class="math display">\[\begin{aligned}
+[x^n]F&amp;=\frac{1}{n}[x^{n-1}](y+\frac{x}{1-x})^n
+\end{aligned}\]</span></p>
+<p>答案为</p>
+<p><span class="math display">\[\begin{aligned}
+[x^ny^k]F&amp;=\frac{1}{n}[x^{n-1}y^k](y+\frac{x}{1-x})^n \\
+&amp;=\frac{1}{n}[x^{n-1}]{n\choose k}(\frac{x}{1-x})^{n-k} \\
+&amp;=\frac{1}{n}{n\choose k}[x^{k-1}](\frac{1}{1-x})^{n-k} \\
+&amp;=\frac{1}{n}{n\choose k}{n-2\choose n-k-1}=\frac{1}{n}{n\choose
+k}{n-2\choose k-1}
+\end{aligned}\]</span></p>
+
+                            
+                </div>
+
+                
+              </div>
+
+              
+            </div>
+
+            
+              <div>
+    <ul class="post-copyright">
+        <li class="post-copyright-author">
+            <strong>
+                作者: 
+            </strong>
+            Nlll</a>
+        </li>
+        <li class="post-copyright-link">
+            <strong>
+                文章链接: 
+            </strong>
+            <a href="/2024/07/14/Raney-in-tree/" style="color:#63abf1" target="_blank"
+                title="Raney引理在有序树上的应用">My-Nlll.github.io/2024/07/14/Raney-in-tree/</a>
+        </li>
+        <li class="post-copyright-license">
+            <strong>
+                版权声明: 
+            </strong>
+            本网站所有文章除特别声明外,均采用 <a rel="license"
+                    href="https://creativecommons.org/licenses/by-nc-nd/4.0/" style="color:#63abf1" target="_blank"
+                    title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND
+                    4.0</a>
+                许可协议。转载请注明出处!
+        </li>
+    </ul>
+    <div>
+                
+
+                  
+                    
+<nav id="article-nav">
+  <a class="article-nav-btn left  disabled "
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2024/06/15/2024SC/"
+      title="2024四川省赛"
+     >
+
+    <p class="title-text">
+      
+        2024四川省赛
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+                      
+    </article>
+
+    
+
+          
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+        <div id="footer-info" class="inner">
+
+          &copy; 2024
+            Nlll<br>
+              Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a
+                  target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+        </div>
+</footer>
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <i class="fa-solid fa-angle-up"></i>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
