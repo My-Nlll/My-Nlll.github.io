@@ -234,6 +234,78 @@ template {
 .highlight .code .strong {
   font-weight: bold;
 }
+@font-face {
+  font-family: 'Dela Gothic One';
+  src: url("/fonts/dela-gothic-one/DelaGothicOne-Regular.ttf") format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url("/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf") format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url("/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf") format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url("/fonts/lxgw-wenkai/LXGWWenKai-Medium.ttf") format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url("/fonts/lxgw-wenkai/LXGWWenKaiRegular.ttf") format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'LXGW WenKai Mono';
+  src: url("/fonts/lxgw-wenkai/LXGWWenKaiMono-Regular.ttf") format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LXGW WenKai Mono';
+  src: url("/fonts/lxgw-wenkai/LXGWWenKaiMono-Medium.ttf") format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Fusion Pixel ZH Hans";
+  src: url("/fonts/fusion-pixel/fusion-pixel-12px-monospaced-zh_hans.otf.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Fusion Pixel ZH Hant";
+  src: url("/fonts/fusion-pixel/fusion-pixel-12px-monospaced-zh_hant.otf.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Fusion Pixel EN";
+  src: url("/fonts/fusion-pixel/fusion-pixel-12px-monospaced-latin.otf.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Fusion Pixel JA";
+  src: url("/fonts/fusion-pixel/fusion-pixel-12px-monospaced-ja.otf.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Fusion Pixel KO";
+  src: url("/fonts/fusion-pixel/fusion-pixel-12px-monospaced-ko.otf.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
 body {
   margin: 0;
 }
@@ -887,13 +959,35 @@ dl dd {
   color: #373633;
 }
 .post-head .post-info .post-date {
+  margin-bottom: 1rem;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.25rem;
   color: #373633;
 }
+.post-head .post-info .tag-list {
+  margin-bottom: -0.75rem;
+}
+.post-head .post-info .tag-list .post-tag {
+  margin-right: 10px;
+}
 .post-head .post-img {
   margin-top: 2rem;
+  text-align: center;
+}
+.post-head .post-img .post-img-meta {
+  margin-top: 0.125rem;
+  font-size: 16px;
+  color: #999;
+  line-height: 1.5;
+}
+.post-head .post-img .post-img-meta a {
+  color: #999;
+  text-decoration: none;
+}
+.post-head .post-img .post-img-meta a:hover {
+  color: #666;
+  text-decoration: underline;
 }
 .post-footer {
   margin-top: 3.5rem;
@@ -1195,4 +1289,7 @@ hr {
 }
 .post-tag:hover a {
   color: #fff;
+}
+.enable-soft-breaks p {
+  white-space: pre-wrap;
 }

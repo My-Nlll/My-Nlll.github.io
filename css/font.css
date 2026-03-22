@@ -1,0 +1,75 @@
+/* Dele Gothic One */
+@font-face {
+  font-family: 'Dela Gothic One';
+  src: url("/fonts/dela-gothic-one/DelaGothicOne-Regular.ttf") format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+/* LXGW WenKai */
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url("/fonts/lxgw-wenkai/LXGWWenKai-Light.ttf") format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url("/fonts/lxgw-wenkai/LXGWWenKai-Regular.ttf") format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url("/fonts/lxgw-wenkai/LXGWWenKai-Medium.ttf") format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url("/fonts/lxgw-wenkai/LXGWWenKaiRegular.ttf") format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'LXGW WenKai Mono';
+  src: url("/fonts/lxgw-wenkai/LXGWWenKaiMono-Regular.ttf") format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LXGW WenKai Mono';
+  src: url("/fonts/lxgw-wenkai/LXGWWenKaiMono-Medium.ttf") format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+/* Fusion Pixel */
+@font-face {
+  font-family: "Fusion Pixel ZH Hans";
+  src: url("/fonts/fusion-pixel/fusion-pixel-12px-monospaced-zh_hans.otf.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Fusion Pixel ZH Hant";
+  src: url("/fonts/fusion-pixel/fusion-pixel-12px-monospaced-zh_hant.otf.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Fusion Pixel EN";
+  src: url("/fonts/fusion-pixel/fusion-pixel-12px-monospaced-latin.otf.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Fusion Pixel JA";
+  src: url("/fonts/fusion-pixel/fusion-pixel-12px-monospaced-ja.otf.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Fusion Pixel KO";
+  src: url("/fonts/fusion-pixel/fusion-pixel-12px-monospaced-ko.otf.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
