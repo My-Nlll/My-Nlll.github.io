@@ -93,6 +93,12 @@
               </li> 
                    
           
+            
+              <li class="menu-item">
+                <a href="/graph/">Graph</a>
+              </li> 
+                   
+          
           
             <li class="menu-item search-btn">
               <a href="#">Search</a>
@@ -139,25 +145,27 @@
     <div class="post-content enable-soft-breaks">
     <h2 id="🚀-Todo">🚀 Todo</h2>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 插入可播放的音频</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Not Found 界面</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 实现双向链接功能</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 插入可播放的音频</li>
 <li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 图形化管理界面</li>
 <li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> PDF 支持</li>
 <li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Home Demo</li>
 <li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> CV Demo</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Not Found 界面</li>
 <li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Post 置顶功能</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 评论功能</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 评论功能</li>
 </ul>
 <h2 id="📝-Write">📝 Write</h2>
 <h2 id="🔧-Fixes">🔧 Fixes</h2>
 <h2 id="🗺️-Roadmap">🗺️ Roadmap</h2>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 实现类似 Obsidian 双链 + 知识图谱的本地插件</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 实现类似 Obsidian 知识图谱的本地插件</li>
 <li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 修缮 CSS 格式 (font, post_head…)</li>
 <li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 简单的交互式组件</li>
 <li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 自动资产管理</li>
 <li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 快捷开发插件 (Quick LaTex, LaTex 导入, 手写笔记导入…)</li>
 <li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 知识库界面 (Banana Space…)</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Sources 托管</li>
 </ul>
 <h2 id="💡-Ideas">💡 Ideas</h2>
 <h2 id="🧊-Icebox">🧊 Icebox</h2>
@@ -199,6 +207,15 @@
 
      
     
+    
+        <div id="tcomment"></div>
+        <script src="https://cdn.staticfile.org/twikoo/1.6.32/twikoo.all.min.js"></script>
+        <script>
+            twikoo.init({
+                envId: 'http://localhost:8080',
+                el: '#tcomment',
+            })
+        </script>
     
 
 </div>

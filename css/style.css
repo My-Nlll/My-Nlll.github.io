@@ -943,6 +943,161 @@ dl dt::after {
 dl dd {
   margin: 0;
 }
+.post-content .obs-internal-link {
+  padding-bottom: 2px;
+  background-image: linear-gradient(#373633, #373633), linear-gradient(#373633, #373633);
+  background-size: 100% 1px, 0 2px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat, no-repeat;
+  transition: background-size 0.6s linear;
+}
+.post-content .obs-internal-link:hover {
+  background-size: 100% 1px, 100% 2px;
+}
+.post-content .obs-internal-link.is-unresolved {
+  color: #afaea9 !important;
+  border-bottom: 1px dashed #afaea9;
+  background-image: none;
+}
+.post-content .obs-internal-link.is-unresolved:hover {
+  cursor: help;
+}
+.post-content .obs-backlinks-container {
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid #afaea9;
+}
+.post-content .obs-backlinks-container .backlinks-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+.post-content .obs-backlinks-container .backlinks-header svg {
+  color: #afaea9;
+  margin-right: 0.5rem;
+}
+.post-content .obs-backlinks-container .backlinks-header h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  color: #373633;
+  margin: 0;
+}
+.post-content .obs-backlinks-container .backlinks-list {
+  padding-left: 1.5rem;
+  margin-top: 0.75rem;
+}
+.post-content .obs-backlinks-container .backlinks-list .backlink-item {
+  font-family: 'Inter', 'Noto Sans SC', helvetica, arial;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  color: #373633;
+  margin-top: 0.5rem;
+  list-style-type: disc;
+}
+.post-content .obs-backlinks-container .backlinks-list .backlink-item a {
+  padding-bottom: 2px;
+  background-image: linear-gradient(#373633, #373633), linear-gradient(#373633, #373633);
+  background-size: 100% 1px, 0 2px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat, no-repeat;
+  transition: background-size 0.6s linear;
+}
+.post-content .obs-backlinks-container .backlinks-list .backlink-item a:hover {
+  background-size: 100% 1px, 100% 2px;
+}
+.notion-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--gallery-cols, 4), 1fr);
+  grid-auto-rows: minmax(240px, auto);
+  gap: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+@media (max-width: 768px) {
+  .notion-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 240px;
+  }
+}
+@media (max-width: 480px) {
+  .notion-gallery-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+}
+.notion-gallery-grid .notion-card {
+  grid-column: span var(--col-span, 1);
+  grid-row: span var(--row-span, 1);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(55,54,51,0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  background-color: var(--background-color);
+}
+@media (max-width: 480px) {
+  .notion-gallery-grid .notion-card {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+  }
+}
+.notion-gallery-grid .notion-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(55,54,51,0.4);
+  box-shadow: 0 8px 16px rgba(55,54,51,0.05);
+}
+.notion-gallery-grid .notion-card .notion-card-img {
+  width: 100%;
+  flex-grow: 1;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(55,54,51,0.1);
+}
+.notion-gallery-grid .notion-card .notion-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0 !important;
+  transition: transform 0.3s ease;
+}
+.notion-gallery-grid .notion-card:hover .notion-card-img img {
+  transform: scale(1.05);
+}
+.notion-gallery-grid .notion-card-content {
+  padding: 12px !important;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+.notion-gallery-grid .notion-card-content > *:first-child {
+  margin-top: 0;
+}
+.notion-gallery-grid .notion-card-content > *:last-child {
+  margin-bottom: 0;
+}
+.notion-gallery-grid .notion-card-content h1,
+.notion-gallery-grid .notion-card-content h2,
+.notion-gallery-grid .notion-card-content h3,
+.notion-gallery-grid .notion-card-content h4,
+.notion-gallery-grid .notion-card-content h5,
+.notion-gallery-grid .notion-card-content h6 {
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+  line-height: 1.2;
+}
+.notion-gallery-grid .notion-card-content p {
+  font-family: 'Inter', 'Noto Sans SC', helvetica, arial;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  color: #373633;
+  font-size: 0.85em;
+  color: #afaea9;
+  margin: 0;
+}
 .post-head {
   margin-top: 3.5rem;
 }
@@ -1090,7 +1245,7 @@ th {
 }
 table {
   border-collapse: collapse;
-  table-layout: fixed;
+  table-layout: auto;
 }
 td,
 th {

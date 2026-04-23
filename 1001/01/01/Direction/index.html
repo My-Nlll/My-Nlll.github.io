@@ -93,6 +93,12 @@
               </li> 
                    
           
+            
+              <li class="menu-item">
+                <a href="/graph/">Graph</a>
+              </li> 
+                   
+          
           
             <li class="menu-item search-btn">
               <a href="#">Search</a>
@@ -149,12 +155,39 @@
 <p>另外, 上述语法都支持设置字体大小, 字重等, <code>[]&#123;&#125;</code> 为 markdown-it-attrs 提供, 可以直接注入 CSS 属性.</p>
 <p>PS: 在展示 <code>{% ... %}</code> 时, 请记得最好放在 <code>&#123;<span></span>% raw %<span></span>&#125;</code><code>&#123;<span></span>% endraw %<span></span>&#125;</code> 里, 防止发生不匹配的错误, 另外, 请注意 <code>{% ... %}</code> 无法嵌套使用以及一些神秘细节, 比如在行内代码 `` 中 <code>&#123;<span></span>% raw %<span></span>&#125;</code><code>&#123;<span></span>% endraw %<span></span>&#125;</code> 应该放在里面, 而行间代码块 ``` 应该放在外面.</p>
 <p>PPS: 其实 <code>&#123;<span></span>% raw %<span></span>&#125;</code><code>&#123;<span></span>% endraw %<span></span>&#125;</code> 才是最难实现的那个, 试了许多方法, 最后可行的是 &lt;code&gt;{&lt;span&gt;&lt;/span&gt;% raw %&lt;span&gt;&lt;/span&gt;}&lt;/code&gt;, 感觉有点抽象.</p>
-<h2 id="Post-元信息">Post 元信息</h2>
+<h2 id="Sources-插入">Sources 插入</h2>
+<h3 id="Video">Video</h3>
+<ul>
+<li><code>&lt;iframe&gt;</code>: 网络资源</li>
+<li><code>&lt;video&gt;</code>: 本地资源</li>
+<li>hexo-tag-dplayer 插件: <code>&#123;<span></span>% dplayer “url=…” “pic=…” “loop=…” “theme=…” “autoplay=…” %<span></span>&#125;</code></li>
+</ul>
+<h3 id="Audio">Audio</h3>
+<ul>
+<li><code>&lt;audio&gt;</code></li>
+<li>hexo-tag-aplayer 插件: 更好看的界面, <code>&#123;<span></span>% aplayer “name” “singer” “xxx.mp3” “xxx.jpg” %<span></span>&#125;</code></li>
+</ul>
+<h3 id="PDF">PDF</h3>
+<ul>
+<li><code>&lt;ifram&gt;</code></li>
+<li>hexo-pdf 插件: <code>&#123;<span></span>% pdf xxx.pdf %<span></span>&#125;</code></li>
+<li>自定义渲染: 直接渲染 PDF 图片, 不单独插入格式块. (未实现)</li>
+</ul>
+<h2 id="双向链接">双向链接</h2>
+<p>用法仿照 Obsidian, 如下:</p>
+<ul>
+<li><code>[[title]]</code>: 指向链接的文章, 可以是不存在的文章.</li>
+<li><code>[[title | name]]</code>: 允许使用别名, 显示的文字会变为 <code>name</code>.</li>
+<li>可以通过元数据 <code>backlinks</code> 设置是否显示反向链接.</li>
+<li>出于测试目的, 我们链接一下 <a href="/1001/01/01/Test-Post/" class="obs-internal-link" data-title="TEST POST">TEST POST</a>.</li>
+</ul>
+<h2 id="Post-元数据">Post 元数据</h2>
 <ul>
 <li><code>breaks: true/false</code>: 默认为 <code>true</code>, 控制文章的书写模式.</li>
 <li><code>featured_image: url/[url, text, link]</code>: url: 头图链接; text: 显示在图片正下方的文本, 一般放作者信息; link: 存在时 text 变为超链接; 默认为一条分割线.</li>
 <li><code>title_style: &quot;css-style&quot;</code>: 设置标题显示的字体.</li>
 <li><code>list_title_style: &quot;css-style&quot;</code>: 设置标题在列表里显示的字体.</li>
+<li><code>backlinks: true/false</code>: 默认为 <code>false</code>, 控制是否显示反向链接.</li>
 </ul>
 
 </div>
@@ -191,6 +224,15 @@
 
      
     
+    
+        <div id="tcomment"></div>
+        <script src="https://cdn.staticfile.org/twikoo/1.6.32/twikoo.all.min.js"></script>
+        <script>
+            twikoo.init({
+                envId: 'http://localhost:8080',
+                el: '#tcomment',
+            })
+        </script>
     
 
 </div>
