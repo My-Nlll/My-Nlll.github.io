@@ -1,12 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="en" data-color-mode="default">
   <head>
     <meta charset="UTF-8">
 <meta name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <meta name="author" content="John Doe">
+    <meta name="color-scheme" content="light dark">
+    <script>
+        (() => {
+            const colorPreference = window.matchMedia('(prefers-color-scheme: dark)');
+            const applyColorMode = event => {
+                const colorMode = event.matches ? 'dark' : 'default';
+                document.documentElement.dataset.colorMode = colorMode;
+                document.documentElement.style.colorScheme = event.matches ? 'dark' : 'light';
+                window.dispatchEvent(new CustomEvent('frame:color-mode-change', {
+                    detail: { colorMode }
+                }));
+            };
+
+            applyColorMode(colorPreference);
+            if (colorPreference.addEventListener) {
+                colorPreference.addEventListener('change', applyColorMode);
+            } else {
+                colorPreference.addListener(applyColorMode);
+            }
+        })();
+    </script>
+
+
+    <meta name="author" content="Nlll">
 
 
 
@@ -14,7 +38,8 @@
 
 
 
-<title>知识图谱 | Hexo</title>
+
+<title>知识图谱 | Nlll&#39;s Blog</title>
 
 
 
@@ -22,9 +47,36 @@
 
 
 
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto+Mono&display=swap');
-</style>
+
+
+    <link rel="preload" href="/fonts/theme/inter/Inter.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/theme/Noto_Sans_SC/NotoSansSC-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/theme/roboto-mono/RobotoMono-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/dela-gothic-one/DelaGothicOne-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKai-Light.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKai-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKai-Medium.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKaiMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKaiMono-Medium.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-zh_hans.otf.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-zh_hant.otf.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-latin.otf.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-ja.otf.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-ko.otf.woff2" as="font" type="font/woff2" crossorigin>
+
 
 
 
@@ -34,11 +86,17 @@
     
 
 
+    <link rel="stylesheet" href="/css/style-dark.css"
+          media="(prefers-color-scheme: dark)">
+
+
 
 
     <!-- scripts list from _config.yml -->
     
     <script src="/js/menu.js"></script>
+    
+    <script src="/js/format.js"></script>
     
 
 
@@ -59,7 +117,9 @@
 
     <div class="wrapper">
 
-      <div class="header">
+      
+
+<header class="header">
   <div class="flex-container">
     <div class="header-inner">
       <div class="site-brand-container">
@@ -69,11 +129,12 @@
           
         </a>
       </div>
-      <div id="menu-btn" class="menu-btn" onclick="toggleMenu()">
+      <button id="menu-btn" class="menu-btn" type="button"
+              aria-expanded="false" aria-controls="menu-list">
         Menu
-      </div>
-      <nav class="site-nav">
-        <ul class="menu-list">
+      </button>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <ul id="menu-list" class="menu-list">
           
             
               <li class="menu-item">
@@ -94,6 +155,12 @@
                    
           
             
+              <li class="menu-item">
+                <a href="/categories/">Category</a>
+              </li> 
+                   
+          
+            
               <li class="menu-item menu-item-active">
                 <a href="/graph/">Graph</a>
               </li> 
@@ -101,73 +168,146 @@
           
           
             <li class="menu-item search-btn">
-              <a href="#">Search</a>
+              <button type="button">Search</button>
             </li>
           
         </ul>
       </nav>
     </div>
   </div>
-</div>
-<script src="/js/menu.js"></script>
+</header>
 
 
-      <div class="main">
+      <main class="main">
         <div class="flex-container">
           <article id="post">
 
   
     <div class="post-head">
     <div class="post-info">
-        <div class="post-title">
+        <h1 class="post-title">
             
             
                 知识图谱
             
             
-        </div>
+        </h1>
     </div>
     <div class="h-line-primary"></div>
 </div>
+
     <div class="post-content enable-soft-breaks">
-    <div id="graph-container" style="width: 100%; height: 65vh; border: 1px solid var(--border-color, #eaeaea); border-radius: 8px; margin-top: 2rem; overflow: hidden;"></div>
-<script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <div id="graph-container" class="graph-container" role="img" aria-label="知识图谱可视化。键盘用户可使用下方的文章节点列表访问文章。"></div>
+<details id="graph-node-directory" class="graph-node-directory">
+  <summary id="graph-node-directory-summary" class="graph-node-directory-summary">文章节点列表（正在加载）</summary>
+  <p class="graph-node-directory-help">已创建的文章显示为链接，未创建的节点显示为不可点击文本。</p>
+  <ul id="graph-node-list" class="graph-node-list" aria-labelledby="graph-node-directory-summary">
+    <li class="graph-node-directory-status">正在加载文章节点…</li>
+  </ul>
+</details>
+<script type="text/javascript" src="../vendor/vis-network/vis-network.min.js"></script>
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById('graph-container');
+    const nodeDirectorySummary = document.getElementById('graph-node-directory-summary');
+    const nodeList = document.getElementById('graph-node-list');
+    let nodeDirectoryLoaded = false;
+
+    const showLoadError = function(error) {
+      console.error('[Knowledge Graph] Failed to load:', error);
+      container.textContent = '知识图谱加载失败，请刷新后重试。';
+      container.setAttribute('role', 'alert');
+      container.style.display = 'flex';
+      container.style.alignItems = 'center';
+      container.style.justifyContent = 'center';
+      container.style.color = 'var(--color-text-secondary, #888)';
+
+      if (nodeDirectoryLoaded) return;
+
+      nodeDirectorySummary.textContent = '文章节点列表（加载失败）';
+      nodeList.replaceChildren();
+      const status = document.createElement('li');
+      status.className = 'graph-node-directory-status';
+      status.textContent = '文章节点加载失败，请刷新后重试。';
+      nodeList.appendChild(status);
+    };
+
+    const renderNodeDirectory = function(nodes) {
+      const sortedNodes = [...nodes].sort((left, right) => String(left.label).localeCompare(
+        String(right.label),
+        undefined,
+        { numeric: true, sensitivity: 'base' }
+      ));
+      const resolvedCount = sortedNodes.filter(node => node.group === 'resolved' && node.url).length;
+      const unresolvedCount = sortedNodes.length - resolvedCount;
+
+      nodeDirectoryLoaded = true;
+      nodeDirectorySummary.textContent = `文章节点列表（${resolvedCount} 篇文章，${unresolvedCount} 个未创建节点）`;
+      nodeList.replaceChildren();
+
+      sortedNodes.forEach(node => {
+        const item = document.createElement('li');
+        item.className = 'graph-node-item';
+
+        if (node.group === 'resolved' && node.url) {
+          const link = document.createElement('a');
+          link.className = 'graph-node-link';
+          link.href = node.url;
+          link.textContent = String(node.label);
+          item.appendChild(link);
+        } else {
+          const label = document.createElement('span');
+          label.className = 'graph-node-unresolved';
+          label.textContent = String(node.label);
+          item.appendChild(label);
+
+          const state = document.createElement('span');
+          state.className = 'graph-node-state';
+          state.textContent = '未创建';
+          item.appendChild(state);
+        }
+
+        nodeList.appendChild(item);
+      });
+    };
+
     // 获取刚刚 Hexo 生成的 JSON 数据
-    fetch('/graph.json')
-      .then(res => res.json())
+    fetch('../graph.json')
+      .then(res => {
+        if (!res.ok) {
+          throw new Error(`graph.json request failed with HTTP ${res.status}`);
+        }
+        return res.json();
+      })
       .then(data => {
-        const container = document.getElementById('graph-container');
-        
+        if (!data || !Array.isArray(data.nodes) || !Array.isArray(data.edges)) {
+          throw new Error('graph.json does not contain valid nodes and edges arrays.');
+        }
+
+        renderNodeDirectory(data.nodes);
+
+        if (!window.vis || !window.vis.Network) {
+          throw new Error('vis-network failed to load.');
+        }
+
         // Frame 主题风格的配置选项
         const options = {
+          layout: {
+            // 固定布局种子，避免每次刷新后节点群位置发生随机变化
+            randomSeed: 20260714
+          },
           nodes: {
             shape: 'dot',
             scaling: { min: 6, max: 24 }, // 节点大小范围
             font: { 
               size: 14, 
-              face: 'Inter, Roboto Mono, sans-serif', // 调用 Frame 主题内置字体
-              color: '#666'
+              face: 'Inter, Roboto Mono, sans-serif' // 调用 Frame 主题内置字体
             },
             borderWidth: 1.5,
             shadow: { enabled: true, color: 'rgba(0,0,0,0.05)', size: 5, x: 2, y: 2 }
           },
-          groups: {
-            // 已创建的文章节点样式 (Frame 风格的深灰/黑色)
-            resolved: {
-              color: { background: '#fff', border: '#333', highlight: { background: '#f5f5f5', border: '#000' } },
-              font: { color: '#333' }
-            },
-            // 未创建的空链接节点样式 (灰色虚线感)
-            unresolved: {
-              color: { background: '#fcfcfc', border: '#ccc', highlight: { background: '#f5f5f5', border: '#aaa' } },
-              font: { color: '#aaa' }
-            }
-          },
           edges: {
             width: 1,
-            color: { color: '#e0e0e0', highlight: '#999', hover: '#999' },
             smooth: { type: 'continuous' } // 让连线有柔和的弧度
           },
           physics: {
@@ -182,51 +322,96 @@
           }
         };
 
-        // 适配暗黑模式 (如果 Frame 切换到了 dark mode)
-        const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (isDarkMode) {
-           options.groups.resolved.color = { background: '#222', border: '#ccc', highlight: { background: '#333', border: '#fff' } };
-           options.groups.resolved.font.color = '#eee';
-           options.groups.unresolved.color.border = '#555';
-           options.groups.unresolved.color.background = '#1a1a1a';
-           options.edges.color.color = '#333';
-           container.style.borderColor = '#333';
-        }
+        const network = new window.vis.Network(container, data, options);
+        network.once('stabilized', function() {
+          // 物理布局完成后重新适配一次，确保节点群以画布中心为基准显示
+          network.fit({ animation: false });
+        });
+        const applyGraphColorMode = function() {
+          const isDarkMode = document.documentElement.dataset.colorMode === 'dark';
+          network.setOptions({
+            nodes: {
+              font: {
+                size: 14,
+                face: 'Inter, Roboto Mono, sans-serif',
+                color: isDarkMode ? '#d5d5d5' : '#666'
+              },
+              shadow: {
+                enabled: true,
+                color: isDarkMode ? 'rgba(0,0,0,0.25)' : 'rgba(0,0,0,0.05)',
+                size: 5,
+                x: 2,
+                y: 2
+              }
+            },
+            groups: {
+              resolved: {
+                color: isDarkMode
+                  ? { background: '#222', border: '#ccc', highlight: { background: '#333', border: '#fff' } }
+                  : { background: '#fff', border: '#333', highlight: { background: '#f5f5f5', border: '#000' } },
+                font: { color: isDarkMode ? '#eee' : '#333' }
+              },
+              unresolved: {
+                color: isDarkMode
+                  ? { background: '#1a1a1a', border: '#555', highlight: { background: '#333', border: '#aaa' } }
+                  : { background: '#fcfcfc', border: '#ccc', highlight: { background: '#f5f5f5', border: '#aaa' } },
+                font: { color: '#aaa' }
+              }
+            },
+            edges: {
+              color: {
+                color: isDarkMode ? '#333' : '#e0e0e0',
+                highlight: '#999',
+                hover: '#999'
+              }
+            }
+          });
+          container.style.borderColor = isDarkMode ? '#333' : '';
+        };
 
-        const network = new vis.Network(container, data, options);
+        applyGraphColorMode();
+        window.addEventListener('frame:color-mode-change', applyGraphColorMode);
+
+        const visualNetwork = container.querySelector('.vis-network');
+        if (visualNetwork) {
+          visualNetwork.setAttribute('aria-hidden', 'true');
+          visualNetwork.removeAttribute('tabindex');
+        }
         
         // 添加点击事件：点击节点直接跳转到对应文章
         network.on('click', function(params) {
           if (params.nodes.length > 0) {
             const nodeId = params.nodes[0];
             const node = data.nodes.find(n => n.id === nodeId);
-            if (node && node.url && node.url !== 'javascript:void(0);') {
+            if (node && node.group === 'resolved' && node.url) {
               window.location.href = node.url;
             }
           }
         });
         
-        // 鼠标悬浮变小手
-        network.on("hoverNode", function () {
-            network.canvas.body.container.style.cursor = 'pointer';
+        // 只有可跳转的文章节点显示为可点击
+        network.on("hoverNode", function (params) {
+            const node = data.nodes.find(n => n.id === params.node);
+            container.style.cursor = node && node.group === 'resolved' && node.url
+              ? 'pointer'
+              : 'default';
         });
         network.on("blurNode", function () {
-            network.canvas.body.container.style.cursor = 'default';
+            container.style.cursor = 'default';
         });
-      });
+      })
+      .catch(showLoadError);
   });
 </script>
+
 </div>
 
-<script>
-    window.onload = detectors();
-</script>
   
 </article>
         </div>
-      </div>
+      </main>
       
-      <div class="footer">
+      <footer class="footer">
     <div class="flex-container">
         <div class="footer-text">
             
@@ -238,41 +423,39 @@
                 
         </div>
     </div>
-</div>
+</footer>
+
 
     </div>
 
     
-      <div class="search-popup">
-    <div class="search-popup-overlay">  
+      <div class="search-popup" aria-hidden="true">
+    <div class="search-popup-overlay" aria-hidden="true">
     </div>
-    <div class="search-popup-window" >
+    <div class="search-popup-window" role="dialog" aria-modal="true" aria-label="Site search">
         <div class="search-header">
             <div class="search-input-container">
               <input autocomplete="off" autocapitalize="off" maxlength="80"
                      placeholder="Search Anything" spellcheck="false"
+                     aria-label="Search Anything"
                      type="search" class="search-input">
             </div>
-            <div class="search-close-btn">
-                <div class="icon close-btn"></div>
-            </div>
+            <button class="search-close-btn" type="button" aria-label="Close search">
+                <span class="icon close-btn" aria-hidden="true"></span>
+            </button>
         </div>
-        <div class="search-result-container">
+        <div class="search-result-container" aria-live="polite">
         </div>
     </div>
 </div>
 
+
 <script>
-    const searchConfig = {
-        path             : "/search.xml",
-        top_n_per_article: "1",
-        unescape         : "false",
-        trigger: "auto",
-        preload: "false"
-    }
+    const searchConfig = {"path":"/search.json","top_n_per_article":1,"unescape":false,"trigger":"auto","preload":false};
 </script>
-<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
+<script src="/js/local-search.js"></script>
 <script src="/js/search.js"></script>
+
     
     
 

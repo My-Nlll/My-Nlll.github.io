@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html lang="en" data-color-mode="default">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="color-scheme" content="light dark">
+    <script>
+        (() => {
+            const colorPreference = window.matchMedia('(prefers-color-scheme: dark)');
+            const applyColorMode = event => {
+                const colorMode = event.matches ? 'dark' : 'default';
+                document.documentElement.dataset.colorMode = colorMode;
+                document.documentElement.style.colorScheme = event.matches ? 'dark' : 'light';
+                window.dispatchEvent(new CustomEvent('frame:color-mode-change', {
+                    detail: { colorMode }
+                }));
+            };
+
+            applyColorMode(colorPreference);
+            if (colorPreference.addEventListener) {
+                colorPreference.addEventListener('change', applyColorMode);
+            } else {
+                colorPreference.addListener(applyColorMode);
+            }
+        })();
+    </script>
+
+
+    <meta name="author" content="Nlll">
+
+
+
+
+
+    <meta name="giscus:backlink" content="https://my-nlll.github.io/2026/04/04/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/%E6%8B%9F%E9%98%B5%E9%9A%8F%E7%AC%94/">
+
+
+
+
+<title>拟阵随笔 | Nlll&#39;s Blog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+
+    <link rel="preload" href="/fonts/theme/inter/Inter.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/theme/Noto_Sans_SC/NotoSansSC-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/theme/roboto-mono/RobotoMono-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/dela-gothic-one/DelaGothicOne-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKai-Light.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKai-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKai-Medium.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKaiMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKaiMono-Medium.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-zh_hans.otf.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-zh_hant.otf.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-latin.otf.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-ja.otf.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-ko.otf.woff2" as="font" type="font/woff2" crossorigin>
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+    <link rel="stylesheet" href="/css/style-dark.css"
+          media="(prefers-color-scheme: dark)">
+
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/menu.js"></script>
+    
+    <script src="/js/format.js"></script>
+    
+
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+
+
+
+
+
+
+
+  <meta name="generator" content="Hexo 8.1.1"></head>
+  <body>
+    <div class="mask-border">
+    </div>
+
+    <div class="wrapper">
+
+      
+
+<header class="header">
+  <div class="flex-container">
+    <div class="header-inner">
+      <div class="site-brand-container">
+        <a href="/">
+          
+            Nlll&#39;s Blog
+          
+        </a>
+      </div>
+      <button id="menu-btn" class="menu-btn" type="button"
+              aria-expanded="false" aria-controls="menu-list">
+        Menu
+      </button>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <ul id="menu-list" class="menu-list">
+          
+            
+              <li class="menu-item">
+                <a href="/">Home</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/archives/">Archive</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/categories/gallery/">Gallery</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/categories/">Category</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/graph/">Graph</a>
+              </li> 
+                   
+          
+          
+            <li class="menu-item search-btn">
+              <button type="button">Search</button>
+            </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+      <main class="main">
+        <div class="flex-container">
+          <article id="post">
+
+  
+    <div class="post-head">
+    <div class="post-info">
+        <h1 class="post-title">
+            
+            
+                拟阵随笔
+            
+            
+        </h1>
+        <span class="post-date">
+            Apr 4, 2026
+        </span>
+        
+
+
+  <div class="post-category">
+    <span class="post-category-label">Categories</span>
+    <ul class="post-category-compact-tree"><li class="post-category-compact-item"><span class="post-category-compact-node"><a class="post-category-compact-link" href="&#x2F;categories&#x2F;%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B&#x2F;">算法竞赛</a></span></li></ul>
+  </div>
+
+
+        <div class="tag-list">
+            
+                
+                    <span class="post-tag">
+                        <a href="/tags/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/">
+                            算法竞赛
+                        </a>
+                    </span>    
+                
+                    <span class="post-tag">
+                        <a href="/tags/%E6%8B%9F%E9%98%B5/">
+                            拟阵
+                        </a>
+                    </span>    
+                           
+            
+        </div>
+    </div>
+
+    
+
+    <div class="post-img">
+        
+            <div class="h-line-primary"></div>
+        
+    </div>
+</div>
+
+    <div class="post-content enable-soft-breaks">
+    <p>本文主要讲一些算法竞赛常见的拟阵模型, 拟阵数学上的定义和定理请见 <span class="obs-internal-link is-unresolved" data-title="拟阵论笔记 Part 1" title="该页面尚未创建">拟阵论笔记</span> 系列.
+例题请见 <a href="&#x2F;2026&#x2F;04&#x2F;04&#x2F;%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B&#x2F;Matroid-Tasks-Solution-Set&#x2F;" class="obs-internal-link" data-title="Matroid Tasks: Solution Set">Matroid Tasks</a>.</p>
+<p>部分内容参考其它人的博客或者文献, 对于较为分散或基础的内容, 在此处列出, 其余的会在对应的地方给出:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/article/fuj3x886">从拟阵基础到 Shannon 开关游戏 - zghtyarecrenj</a></li>
+</ul>
+<h2 id="Part-1-常见拟阵">Part 1. 常见拟阵</h2>
+<p>实际上, 算法竞赛中常见的拟阵并不多, 绝大部分比较抽象的拟阵都很难找到具体的可以使用的例子.
+总之稍微列一些:</p>
+<h3 id="1-1-图拟阵-Graphic-Matroid">1.1 图拟阵 Graphic Matroid</h3>
+<p>给定一张无向图 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>=</mo><mo stretchy="false">(</mo><mi>V</mi><mo separator="true">,</mo><mi>E</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">G = (V, E)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">G</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mclose">)</span></span></span></span>, ground set 即边集 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span></span></span></span>, 独立的要求是集合中的所有边不成环.</p>
+<h3 id="1-2-线性拟阵-Linear-Matroid">1.2 线性拟阵 Linear Matroid</h3>
+<p>ground set 为一些 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> 维向量构成的集合 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span></span></span></span>, 独立的要求是集合中的向量线性无关.</p>
+<p>线性拟阵的基就是我们常说的线性基.</p>
+<h3 id="1-3">1.3</h3>
+<h3 id="1-4">1.4</h3>
+<h3 id="1-5">1.5</h3>
+<h2 id="Part-2-拟阵交">Part 2. 拟阵交</h2>
+<h2 id="Part-3-区间-树上-可删-动态拟阵基">Part 3. 区间 &amp; 树上 &amp; 可删 &amp; 动态拟阵基</h2>
+<p>我们</p>
+<h2 id="Part-4-特殊情况的优化">Part 4. 特殊情况的优化</h2>
+<p>对于常见的拟阵, 很多时候我们在相关的算法上有一些优化办法.</p>
+<h3 id="4-1-Oracle-询问">4.1 Oracle 询问</h3>
+<h3 id="4-2-拟阵交">4.2 拟阵交</h3>
+<p>主要讨论某些特殊情况的拟阵交的更优做法, 此处一般不考虑 Oracle 的复杂度.</p>
+<p>TODO: 有一些特殊情况, 直接使用拟阵交大小的公式 min-max 形式枚举复杂度更优.</p>
+<h4 id="4-2-1-线性拟阵-线性拟阵的拟阵交">4.2.1 线性拟阵 - 线性拟阵的拟阵交</h4>
+<h4 id="4-2-2-划分">4.2.2 划分</h4>
+<h4 id="4-2">4.2</h4>
+<h4 id="4-2-2-交换图的一般优化办法">4.2.2 交换图的一般优化办法</h4>
+<p>之后很多情况的思想是一样的, 因此我们现在这里大概叙述一下:</p>
+<p>我们不一定要保证交换图是严格的二分图, 实际上, 通过类似线段树优化建图的办法, 我们可以很好地优化建立交换图的过程. 显然对于可能的环是不影响的, 至于如何保证环的最短性, 只需要合理地设置边权使得每次从 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi></mrow><annotation encoding="application/x-tex">I</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span></span></span></span> 到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>∖</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">X \setminus I</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∖</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span></span></span></span> 的距离仍为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 即可.</p>
+<h4 id="4-2-3-划分拟阵的交换图优化">4.2.3 划分拟阵的交换图优化</h4>
+<p>朴素做法下划分拟阵交换图的大小显然是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>r</mi><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(rn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>, 即预处理后对每条边 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> 判断.</p>
+<p>一个可行的优化方法是建立虚拟节点: 容易想到交换图应该是每个同色点内部根据是否加入 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi></mrow><annotation encoding="application/x-tex">I</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span></span></span></span> 建立的完全二分图.</p>
+<p>那么我们给每个颜色 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">c</span></span></span></span> 建立一个虚拟节点 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>V</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">V_{c}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">c</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, 然后对所有已经加入 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi></mrow><annotation encoding="application/x-tex">I</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span></span></span></span> 且颜色为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">c</span></span></span></span> 的节点 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">u</span></span></span></span> 连 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>u</mi><mo separator="true">,</mo><msub><mi>V</mi><mi>c</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(u, V_{c})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">c</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>, 未加入 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi></mrow><annotation encoding="application/x-tex">I</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span></span></span></span> 且颜色为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">c</span></span></span></span> 的节点 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span></span></span></span> 连 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mi>c</mi></msub><mo separator="true">,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(V_{c}, v)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">c</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mclose">)</span></span></span></span> 即可 (或者反过来). 边权随便找一边设为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>, 另一边设为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 即可.</p>
+<p>于是图的大小从 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>r</mi><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(rn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span> 降到了 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>.</p>
+<h4 id="4-2-4-图拟阵的交换图优化">4.2.4 图拟阵的交换图优化</h4>
+<p>朴素做法交换图大小为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>r</mi><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(rn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>.</p>
+<p>考虑对于一条非树边 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mo stretchy="false">(</mo><mi>u</mi><mo separator="true">,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">x = (u, v)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mclose">)</span></span></span></span> 能替换哪些树边 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span>.
+不难想到树边 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span> 一定位于此时树上 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">u</span></span></span></span> 到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span></span></span></span> 的路径.
+因为每一轮建图时, 森林的形态是静态的, 所以直接用树链剖分, 我们就可以把任意一条路径分成 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>log</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">\log</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span></span></span></span> 个连续链.</p>
+<p>对于每个连续链, 直接维护仍然不行, 因为某些边对应的实际点只是链的一部分, 因此我们还是需要按照树上剖分的思路, 使用线段树优化建图, 把 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span></span></span></span> 向对应区间连边即可.</p>
+<p>同时注意为了保证遍历的复杂度, 一定要仔细处理每个线段树上每个区间是否已经访问过. 至于边权, 只需把边 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span></span></span></span> 和区间之间的边设为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>, 其余设为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 即可.</p>
+<p>PS: 这里是以非树边 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span></span></span></span> 替换树边 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span> 为例, 反过来也一样, 只要把边的方向反一下, 从 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span> 开始遍历距离为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的点, 并把所有经过的区间都打上标记即可.</p>
+<p>图的大小容易证明是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><msup><mo><mi>log</mi><mo>⁡</mo></mo><mn>2</mn></msup><mi>r</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n \log^{2}{r})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.148448em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8984479999999999em;"><span style="top:-3.1473400000000002em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span><span class="mclose">)</span></span></span></span> 的. 另外我们实际上已经同时解决了 Oracl.</p>
+<p>继续优化可以利用树链剖分的性质, 对于每条重链, 我们额外维护 top 到每个点的区间, 这样对每条路径, 只有首尾链可能需要使用线段树区间, 总的段数降到了 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>log</mi><mo>⁡</mo><mi>r</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(\log{r})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span><span class="mclose">)</span></span></span></span>.</p>
+<p>图的大小做到了 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>r</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n \log{r})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span><span class="mclose">)</span></span></span></span>.</p>
+<p>PS: 结合图拟阵和划分拟阵的交换图优化, 以及 Dinic / Hopcroft-Karp 增广, 我们就可以把划分拟阵和图拟阵的拟阵交做到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><msup><mi>r</mi><mn>0.5</mn></msup><mi>log</mi><mo>⁡</mo><mi>r</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n r^{0.5} \log{r})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span><span class="mord mtight">.</span><span class="mord mtight">5</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span><span class="mclose">)</span></span></span></span>.</p>
+<p>给出一些相关的扩展资料 (可能之后会把主要结果补充到随笔里?):</p>
+<ul>
+<li><em>Efficient algorithms for a family of matroid intersection problems</em></li>
+<li><em>Efficient Algorithms for Graphic Matroid Intersection and Parity</em></li>
+</ul>
+<h4 id="4-2-5-图拟阵的对偶拟阵的交换图优化">4.2.5 图拟阵的对偶拟阵的交换图优化</h4>
+<h3 id="4-3-特殊拟阵的环上操作">4.3 特殊拟阵的环上操作</h3>
+<p>对于任意拟阵, 找环或者进行一些环上操作是困难的, 不过对于一些特殊拟阵我们有一些可用的办法.</p>
+<h4 id="4-3-1-图拟阵-LCT">4.3.1 图拟阵 - LCT</h4>
+<h4 id="4-3-2-横截拟阵-RPQ">4.3.2 横截拟阵 - RPQ</h4>
+<h2 id="Part-5-其它模型">Part 5. 其它模型</h2>
+<p>大概是一些比较冷门的模型? 有一些其实应该不太能在算法竞赛的意义上做出来, 但谁知道呢?</p>
+<h3 id="Shannon-Switch-Game">Shannon Switch Game</h3>
+<h3 id="广义网络流">广义网络流</h3>
+<p>这部分内参考自《拟阵论》中的 Chapter 9.</p>
+<h2 id="Part-6-ad-hoc">Part 6. ad-hoc</h2>
+<p>应该是一些自我感觉适用性比较小的东西.</p>
+<h3 id="划分拟阵-图拟阵的拟阵交优化">划分拟阵 - 图拟阵的拟阵交优化</h3>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mi>k</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^{2}k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span></p>
+
+</div>
+
+    <div class="post-footer">
+    <div class="h-line-primary"></div>
+    <nav class="post-nav" aria-label="Post navigation">
+        <div class="prev-item">
+           
+                <div class="icon arrow-left"></div>
+                <div class="post-link">
+                    <a href="/2026/04/04/%E5%85%B6%E5%AE%83/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Prev</a>
+                </div>
+            
+        </div>
+        <div class="next-item">
+            
+                <div class="icon arrow-right"></div>
+                <div class="post-link">
+                  <a href="/2026/04/04/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/Matroid-Tasks-Solution-Set/">Next</a>  
+                </div>  
+            
+        </div>
+    </nav>
+</div>
+
+    
+      <div class="post-comment">
+
+     
+
+     
+    
+    
+
+    
+    
+        <script src="https://giscus.app/client.js"
+                data-repo="My-Nlll/My-Nlll.github.io"
+                data-repo-id="R_kgDOLTQ_lw"
+                data-category="Announcements"
+                data-category-id="DIC_kwDOLTQ_l84DBIN-"
+                data-mapping="specific"
+                data-term="拟阵随笔"
+                data-strict="1"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="bottom"
+                data-theme="preferred_color_scheme"
+                data-lang="zh-CN"
+                data-loading="lazy"
+                crossorigin="anonymous"
+                async>
+        </script>
+    
+
+</div>
+
+     
+  
+</article>
+        </div>
+      </main>
+      
+      <footer class="footer">
+    <div class="flex-container">
+        <div class="footer-text">
+            
+            
+                Nlll | 
+            
+            
+                Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/zoeingwingkei/frame/">Frame</a>
+                
+        </div>
+    </div>
+</footer>
+
+
+    </div>
+
+    
+      <div class="search-popup" aria-hidden="true">
+    <div class="search-popup-overlay" aria-hidden="true">
+    </div>
+    <div class="search-popup-window" role="dialog" aria-modal="true" aria-label="Site search">
+        <div class="search-header">
+            <div class="search-input-container">
+              <input autocomplete="off" autocapitalize="off" maxlength="80"
+                     placeholder="Search Anything" spellcheck="false"
+                     aria-label="Search Anything"
+                     type="search" class="search-input">
+            </div>
+            <button class="search-close-btn" type="button" aria-label="Close search">
+                <span class="icon close-btn" aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="search-result-container" aria-live="polite">
+        </div>
+    </div>
+</div>
+
+
+<script>
+    const searchConfig = {"path":"/search.json","top_n_per_article":1,"unescape":false,"trigger":"auto","preload":false};
+</script>
+<script src="/js/local-search.js"></script>
+<script src="/js/search.js"></script>
+
+    
+    
+
+  </body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html lang="en" data-color-mode="default">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="color-scheme" content="light dark">
+    <script>
+        (() => {
+            const colorPreference = window.matchMedia('(prefers-color-scheme: dark)');
+            const applyColorMode = event => {
+                const colorMode = event.matches ? 'dark' : 'default';
+                document.documentElement.dataset.colorMode = colorMode;
+                document.documentElement.style.colorScheme = event.matches ? 'dark' : 'light';
+                window.dispatchEvent(new CustomEvent('frame:color-mode-change', {
+                    detail: { colorMode }
+                }));
+            };
+
+            applyColorMode(colorPreference);
+            if (colorPreference.addEventListener) {
+                colorPreference.addEventListener('change', applyColorMode);
+            } else {
+                colorPreference.addListener(applyColorMode);
+            }
+        })();
+    </script>
+
+
+    <meta name="author" content="Nlll">
+
+
+
+
+
+
+
+
+<title>Category: gallery | Nlll&#39;s Blog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+
+    <link rel="preload" href="/fonts/theme/inter/Inter.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/theme/Noto_Sans_SC/NotoSansSC-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/theme/roboto-mono/RobotoMono-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/dela-gothic-one/DelaGothicOne-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKai-Light.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKai-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKai-Medium.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKaiMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKaiMono-Medium.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-zh_hans.otf.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-zh_hant.otf.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-latin.otf.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-ja.otf.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-ko.otf.woff2" as="font" type="font/woff2" crossorigin>
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+    <link rel="stylesheet" href="/css/style-dark.css"
+          media="(prefers-color-scheme: dark)">
+
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/menu.js"></script>
+    
+    <script src="/js/format.js"></script>
+    
+
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+
+
+
+
+
+
+
+  <meta name="generator" content="Hexo 8.1.1"></head>
+  <body>
+    <div class="mask-border">
+    </div>
+
+    <div class="wrapper">
+
+      
+
+<header class="header">
+  <div class="flex-container">
+    <div class="header-inner">
+      <div class="site-brand-container">
+        <a href="/">
+          
+            Nlll&#39;s Blog
+          
+        </a>
+      </div>
+      <button id="menu-btn" class="menu-btn" type="button"
+              aria-expanded="false" aria-controls="menu-list">
+        Menu
+      </button>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <ul id="menu-list" class="menu-list">
+          
+            
+              <li class="menu-item">
+                <a href="/">Home</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/archives/">Archive</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item menu-item-active">
+                <a href="/categories/gallery/">Gallery</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/categories/">Category</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/graph/">Graph</a>
+              </li> 
+                   
+          
+          
+            <li class="menu-item search-btn">
+              <button type="button">Search</button>
+            </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+      <main class="main">
+        <div class="flex-container">
+          
+
+<div id="category">
+  
+    <h1 class="visually-hidden">gallery</h1>
+  
+
+  
+    <div class="post-gallery">
+    <div class="post-gallery-list">
+        
+            
+            <div class="post-gallery-item">
+                <div class="post-info">
+                    <div class="tag-list">
+                        
+                            
+                                <span class="post-tag">
+                                    <a href="/tags/Test/">
+                                        Test
+                                    </a>
+                                </span>   
+                                       
+                        
+                    </div>
+                    <h2 class="post-title">
+                        <a href="/1001/01/01/%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/Test-Post/">
+                            
+                                TEST POST
+                            
+                        </a>
+                    </h2>
+                    <span class="post-date">
+                        Jan 1, 1001
+                    </span>
+                </div>
+                
+                    <div class="post-img">
+                        <picture class="responsive-image"><source srcset="/images/Test-Post/featured_image.webp" type="image/webp"><img loading="lazy" src="/images/Test-Post/featured_image.png" alt="画师: ERykk" decoding="async" width="1440" height="1018"></picture>
+                    </div>
+                
+            </div>
+            <div class="h-line-secondary"></div>
+        
+    </div>
+    <div id="paginator">
+        
+
+    </div>
+</div>
+
+  
+</div>
+
+        </div>
+      </main>
+      
+      <footer class="footer">
+    <div class="flex-container">
+        <div class="footer-text">
+            
+            
+                Nlll | 
+            
+            
+                Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/zoeingwingkei/frame/">Frame</a>
+                
+        </div>
+    </div>
+</footer>
+
+
+    </div>
+
+    
+      <div class="search-popup" aria-hidden="true">
+    <div class="search-popup-overlay" aria-hidden="true">
+    </div>
+    <div class="search-popup-window" role="dialog" aria-modal="true" aria-label="Site search">
+        <div class="search-header">
+            <div class="search-input-container">
+              <input autocomplete="off" autocapitalize="off" maxlength="80"
+                     placeholder="Search Anything" spellcheck="false"
+                     aria-label="Search Anything"
+                     type="search" class="search-input">
+            </div>
+            <button class="search-close-btn" type="button" aria-label="Close search">
+                <span class="icon close-btn" aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="search-result-container" aria-live="polite">
+        </div>
+    </div>
+</div>
+
+
+<script>
+    const searchConfig = {"path":"/search.json","top_n_per_article":1,"unescape":false,"trigger":"auto","preload":false};
+</script>
+<script src="/js/local-search.js"></script>
+<script src="/js/search.js"></script>
+
+    
+    
+
+  </body>
+</html>

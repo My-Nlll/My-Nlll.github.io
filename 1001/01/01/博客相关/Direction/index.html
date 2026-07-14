@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html lang="en" data-color-mode="default">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="color-scheme" content="light dark">
+    <script>
+        (() => {
+            const colorPreference = window.matchMedia('(prefers-color-scheme: dark)');
+            const applyColorMode = event => {
+                const colorMode = event.matches ? 'dark' : 'default';
+                document.documentElement.dataset.colorMode = colorMode;
+                document.documentElement.style.colorScheme = event.matches ? 'dark' : 'light';
+                window.dispatchEvent(new CustomEvent('frame:color-mode-change', {
+                    detail: { colorMode }
+                }));
+            };
+
+            applyColorMode(colorPreference);
+            if (colorPreference.addEventListener) {
+                colorPreference.addEventListener('change', applyColorMode);
+            } else {
+                colorPreference.addListener(applyColorMode);
+            }
+        })();
+    </script>
+
+
+    <meta name="author" content="Nlll">
+
+
+
+
+
+    <meta name="giscus:backlink" content="https://my-nlll.github.io/1001/01/01/%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/Direction/">
+
+
+
+
+<title>DIRECTION | Nlll&#39;s Blog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+
+    <link rel="preload" href="/fonts/theme/inter/Inter.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/theme/Noto_Sans_SC/NotoSansSC-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/theme/roboto-mono/RobotoMono-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/dela-gothic-one/DelaGothicOne-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKai-Light.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKai-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKai-Medium.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKaiMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKaiMono-Medium.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-zh_hans.otf.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-zh_hant.otf.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-latin.otf.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-ja.otf.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-ko.otf.woff2" as="font" type="font/woff2" crossorigin>
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+    <link rel="stylesheet" href="/css/style-dark.css"
+          media="(prefers-color-scheme: dark)">
+
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/menu.js"></script>
+    
+    <script src="/js/format.js"></script>
+    
+
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+
+
+
+
+
+
+
+  <meta name="generator" content="Hexo 8.1.1"></head>
+  <body>
+    <div class="mask-border">
+    </div>
+
+    <div class="wrapper">
+
+      
+
+<header class="header">
+  <div class="flex-container">
+    <div class="header-inner">
+      <div class="site-brand-container">
+        <a href="/">
+          
+            Nlll&#39;s Blog
+          
+        </a>
+      </div>
+      <button id="menu-btn" class="menu-btn" type="button"
+              aria-expanded="false" aria-controls="menu-list">
+        Menu
+      </button>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <ul id="menu-list" class="menu-list">
+          
+            
+              <li class="menu-item">
+                <a href="/">Home</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/archives/">Archive</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/categories/gallery/">Gallery</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/categories/">Category</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/graph/">Graph</a>
+              </li> 
+                   
+          
+          
+            <li class="menu-item search-btn">
+              <button type="button">Search</button>
+            </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+      <main class="main">
+        <div class="flex-container">
+          <article id="post">
+
+  
+    <div class="post-head">
+    <div class="post-info">
+        <h1 class="post-title">
+            
+            
+                DIRECTION
+            
+            
+        </h1>
+        <span class="post-date">
+            Jan 1, 1001
+        </span>
+        
+
+
+  <div class="post-category">
+    <span class="post-category-label">Categories</span>
+    <ul class="post-category-compact-tree"><li class="post-category-compact-item"><span class="post-category-compact-node"><a class="post-category-compact-link" href="&#x2F;categories&#x2F;%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3&#x2F;">博客相关</a></span></li></ul>
+  </div>
+
+
+        <div class="tag-list">
+            
+        </div>
+    </div>
+
+    
+
+    <div class="post-img">
+        
+            <div class="h-line-primary"></div>
+        
+    </div>
+</div>
+
+    <div class="post-content enable-soft-breaks">
+    <h2 id="自定义数学符号">自定义数学符号</h2>
+<p>不要直接修改 _config.yml, 在 macros.json 里添加, 会自动注入 (LoadMacros.js).</p>
+<h2 id="自定义字体">自定义字体</h2>
+<p>先在 source\fonts 里保存字体, 然后在 %THEME%\source\css\font.styl (or style.styl) 里加上 <code>@font-face</code> 的声明.</p>
+<p>然后使用 <code>[自定义字体文本]&#123;style=&quot;font-family: 'MyFont'&quot;&#125;</code> 即可.</p>
+<p>另外, 为了方便使用自定义字体, 添加了 custom-font.js 用于支持下述语法:</p>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% font &#x27;MyFont&#x27; %&#125;</span><br><span class="line">自定义字体文本或段落</span><br><span class="line">&#123;% endfont %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>另外, 上述语法都支持设置字体大小, 字重等, <code>[]&#123;&#125;</code> 为 markdown-it-attrs 提供, 可以直接注入 CSS 属性.</p>
+<p>PS: 在展示 <code>{% ... %}</code> 时, 请记得最好放在 <code>&#123;<span></span>% raw %<span></span>&#125;</code><code>&#123;<span></span>% endraw %<span></span>&#125;</code> 里, 防止发生不匹配的错误, 另外, 请注意 <code>{% ... %}</code> 无法嵌套使用以及一些神秘细节, 比如在行内代码 `` 中 <code>&#123;<span></span>% raw %<span></span>&#125;</code><code>&#123;<span></span>% endraw %<span></span>&#125;</code> 应该放在里面, 而行间代码块 ``` 应该放在外面.</p>
+<p>PPS: 其实 <code>&#123;<span></span>% raw %<span></span>&#125;</code><code>&#123;<span></span>% endraw %<span></span>&#125;</code> 才是最难实现的那个, 试了许多方法, 最后可行的是 &lt;code&gt;{&lt;span&gt;&lt;/span&gt;% raw %&lt;span&gt;&lt;/span&gt;}&lt;/code&gt;, 感觉有点抽象.</p>
+<h2 id="Sources-插入">Sources 插入</h2>
+<h3 id="Video">Video</h3>
+<ul>
+<li><code>&lt;iframe&gt;</code>: 网络资源</li>
+<li><code>&lt;video&gt;</code>: 本地资源</li>
+<li>hexo-tag-dplayer 插件: <code>&#123;<span></span>% dplayer “url=…” “pic=…” “loop=…” “theme=…” “autoplay=…” %<span></span>&#125;</code></li>
+</ul>
+<h3 id="Audio">Audio</h3>
+<ul>
+<li><code>&lt;audio&gt;</code></li>
+<li>hexo-tag-aplayer 插件: 更好看的界面, <code>&#123;<span></span>% aplayer “name” “singer” “xxx.mp3” “xxx.jpg” %<span></span>&#125;</code></li>
+</ul>
+<h3 id="PDF">PDF</h3>
+<ul>
+<li><code>&lt;ifram&gt;</code></li>
+<li>hexo-pdf 插件: <code>&#123;<span></span>% pdf xxx.pdf %<span></span>&#125;</code></li>
+<li>自定义渲染: 直接渲染 PDF 图片, 不单独插入格式块. (未实现)</li>
+</ul>
+<h2 id="双向链接">双向链接</h2>
+<p>用法仿照 Obsidian, 如下:</p>
+<ul>
+<li><code>[[title]]</code>: 指向链接的文章, 可以是不存在的文章.</li>
+<li><code>[[title | name]]</code>: 允许使用别名, 显示的文字会变为 <code>name</code>.</li>
+<li>可以通过元数据 <code>backlinks</code> 设置是否显示反向链接.</li>
+<li>出于测试目的, 我们链接一下 <a href="&#x2F;1001&#x2F;01&#x2F;01&#x2F;%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3&#x2F;Test-Post&#x2F;" class="obs-internal-link" data-title="TEST POST">TEST POST</a>.</li>
+</ul>
+<h2 id="Post-元数据">Post 元数据</h2>
+<ul>
+<li><code>breaks: true/false</code>: 默认为 <code>true</code>, 控制文章的书写模式.</li>
+<li><code>featured_image: url/[url, text, link]</code>: url: 头图链接; text: 显示在图片正下方的文本, 一般放作者信息; link: 存在时 text 变为超链接; 默认为一条分割线.</li>
+<li><code>title_style: &quot;css-style&quot;</code>: 设置标题显示的字体.</li>
+<li><code>list_title_style: &quot;css-style&quot;</code>: 设置标题在列表里显示的字体.</li>
+<li><code>backlinks: true/false</code>: 默认为 <code>false</code>, 控制是否显示反向链接.</li>
+</ul>
+
+</div>
+
+    <div class="post-footer">
+    <div class="h-line-primary"></div>
+    <nav class="post-nav" aria-label="Post navigation">
+        <div class="prev-item">
+           
+                <div class="icon arrow-left"></div>
+                <div class="post-link">
+                    <a href="/1001/01/01/%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/Update-Log/">Prev</a>
+                </div>
+            
+        </div>
+        <div class="next-item">
+            
+                <div class="icon arrow-right"></div>
+                <div class="post-link">
+                  <a href="/1001/01/01/%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/Test-Post/">Next</a>  
+                </div>  
+            
+        </div>
+    </nav>
+</div>
+
+    
+      <div class="post-comment">
+
+     
+
+     
+    
+    
+
+    
+    
+        <script src="https://giscus.app/client.js"
+                data-repo="My-Nlll/My-Nlll.github.io"
+                data-repo-id="R_kgDOLTQ_lw"
+                data-category="Announcements"
+                data-category-id="DIC_kwDOLTQ_l84DBIN-"
+                data-mapping="specific"
+                data-term="DIRECTION"
+                data-strict="1"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="bottom"
+                data-theme="preferred_color_scheme"
+                data-lang="zh-CN"
+                data-loading="lazy"
+                crossorigin="anonymous"
+                async>
+        </script>
+    
+
+</div>
+
+     
+  
+</article>
+        </div>
+      </main>
+      
+      <footer class="footer">
+    <div class="flex-container">
+        <div class="footer-text">
+            
+            
+                Nlll | 
+            
+            
+                Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/zoeingwingkei/frame/">Frame</a>
+                
+        </div>
+    </div>
+</footer>
+
+
+    </div>
+
+    
+      <div class="search-popup" aria-hidden="true">
+    <div class="search-popup-overlay" aria-hidden="true">
+    </div>
+    <div class="search-popup-window" role="dialog" aria-modal="true" aria-label="Site search">
+        <div class="search-header">
+            <div class="search-input-container">
+              <input autocomplete="off" autocapitalize="off" maxlength="80"
+                     placeholder="Search Anything" spellcheck="false"
+                     aria-label="Search Anything"
+                     type="search" class="search-input">
+            </div>
+            <button class="search-close-btn" type="button" aria-label="Close search">
+                <span class="icon close-btn" aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="search-result-container" aria-live="polite">
+        </div>
+    </div>
+</div>
+
+
+<script>
+    const searchConfig = {"path":"/search.json","top_n_per_article":1,"unescape":false,"trigger":"auto","preload":false};
+</script>
+<script src="/js/local-search.js"></script>
+<script src="/js/search.js"></script>
+
+    
+    
+
+  </body>
+</html>
