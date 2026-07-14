@@ -82,6 +82,9 @@
 
 
 
+    <link rel="stylesheet" href="/vendor/pdfjs/web/pdf_viewer.css">
+
+
     <!-- stylesheets list from _config.yml -->
     
     <link rel="stylesheet" href="/css/style.css">
@@ -112,7 +115,9 @@
 
 
 
-  <meta name="generator" content="Hexo 8.1.1"></head>
+  <meta name="generator" content="Hexo 8.1.1"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+</head>
   <body>
     <div class="mask-border">
     </div>
@@ -268,7 +273,41 @@
 <h2 id="9-自定义列表标题">9. 自定义列表标题</h2>
 <p>见本文列表标题.</p>
 <h2 id="10-插入音频-视频">10. 插入音频 &amp; 视频</h2>
+<div id="auto-aplayer-84d982255980" class="aplayer aplayer-tag-marker" data-auto-aplayer data-audio-src="/audio/Test-Post/audio-example-1.mp3" style="margin-bottom: 20px;">
+  <pre class="aplayer-lrc-content"></pre>
+</div>
+<script>
+  (function () {
+    var player = new APlayer({
+      element: document.getElementById("auto-aplayer-84d982255980"),
+      narrow: false,
+      autoplay: false,
+      showlrc: false,
+      music: {
+        title: "おはようオーパーツ",
+        author: "相対性理論",
+        url: "/audio/Test-Post/audio-example-1.mp3",
+        pic: "/assets/auto-aplayer/67fa25d2c0e02ad38111.jpg",
+        lrc: ""
+      }
+    });
+    window.aplayers || (window.aplayers = []);
+    window.aplayers.push(player);
+  }());
+</script>
 <h2 id="11-插入-PDF-图片">11. 插入 PDF &amp; 图片</h2>
+<figure class="pdf-document" data-pdf-reader data-pdf-src="/pdfs/Test-Post/pdf-example-1.pdf"
+        data-render-distance="1600" data-max-rendered-pages="8"
+        data-max-pixel-ratio="2" data-start-page="1"
+        data-pages="1-2" data-text-layer="true"
+        data-annotation-layer="true" data-page-numbers="false"
+        data-pdf-state="loading" aria-busy="true">
+  <div class="pdf-document-pages pdfViewer" role="document" aria-label="pdf-example-1.pdf"></div>
+  <noscript>
+    <p class="pdf-document-fallback">JavaScript is required for continuous reading. <a href="/pdfs/Test-Post/pdf-example-1.pdf">Open the original PDF.</a></p>
+  </noscript>
+</figure>
+<img class="" src="/images/Test-Post/image-example-1.png" alt="" decoding="async" width="971" height="540">
 <h2 id="12-Comment">12. Comment</h2>
 <p>见本文评论区.</p>
 <h2 id="13-双向链接">13. 双向链接</h2>
@@ -460,6 +499,13 @@
 <script src="/js/local-search.js"></script>
 <script src="/js/search.js"></script>
 
+    
+
+    
+      <script type="module"
+              src="/js/pdf-reader.mjs"
+              data-pdf-reader-module
+              data-pdfjs-base="/vendor/pdfjs/"></script>
     
     
 

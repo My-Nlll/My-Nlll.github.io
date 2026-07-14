@@ -1671,6 +1671,188 @@ ul li.task-list-item input[type=checkbox]:before {
   background-position-y: center;
   --webkit-touch-callout: none;
 }
+.pdf-document {
+  width: 100%;
+  margin: 2rem 0;
+  color: #d5d5d5;
+}
+.pdf-document .pdf-document-caption {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 0;
+  margin-bottom: 0.5rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+}
+.pdf-document .pdf-document-title {
+  min-width: 0;
+  overflow: hidden;
+  color: #d5d5d5;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pdf-document .pdf-document-status {
+  margin-left: auto;
+  color: #6c6c6c;
+  white-space: nowrap;
+}
+.pdf-document .pdf-document-original {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+.pdf-document .pdf-document-pages {
+  --page-margin: 0 auto 24px;
+  --page-border: none;
+  --page-bg-color: #fff;
+  width: 100%;
+  padding: 0;
+  overflow: visible;
+  background: transparent;
+}
+.pdf-document .pdf-document-pages .page {
+  max-width: 100%;
+  overflow: hidden;
+  outline: 1px solid rgba(0,0,0,0.14);
+  border-radius: 2px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  background-color: #fff;
+  transition: box-shadow 0.2s ease;
+}
+.pdf-document .pdf-document-pages .page.pdf-document-page--pending {
+  background: linear-gradient(110deg, #f3f3f3 8%, #fafafa 18%, #f3f3f3 33%);
+  background-size: 200% 100%;
+  animation: pdf-page-loading 1.4s linear infinite;
+}
+.pdf-document .pdf-document-pages .page.pdf-document-page--error {
+  outline-color: #b94a48;
+  background: #fff5f5;
+}
+.pdf-document[data-page-numbers='true'] .pdf-document-pages .page::after {
+  content: attr(data-page-number);
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  z-index: 10;
+  display: block;
+  min-width: 22px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  color: #555;
+  background: rgba(255,255,255,0.82);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.16);
+  font-family: sans-serif;
+  font-size: 11px;
+  line-height: 18px;
+  text-align: center;
+  pointer-events: none;
+}
+.pdf-document .pdf-document-error,
+.pdf-document .pdf-document-fallback {
+  margin: 0;
+  padding: 1.5rem;
+  border: 1px dashed rgba(213,213,213,0.25);
+  border-radius: 4px;
+  color: #6c6c6c;
+  text-align: center;
+}
+.pdf-document--wide {
+  width: min(1100px, calc(100vw - 48px));
+  max-width: none;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.pdf-document--legacy .pdf-document-legacy-frame {
+  display: block;
+  width: 100%;
+  height: min(760px, 78vh);
+  border: 1px solid rgba(213,213,213,0.16);
+  border-radius: 4px;
+  background: #fff;
+}
+.pdf-document--legacy .pdf-document-caption {
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+}
+@media (max-width: 688px) {
+  .pdf-document,
+  .pdf-document--wide {
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+    margin-left: 0;
+    transform: none;
+  }
+  .pdf-document .pdf-document-caption,
+  .pdf-document--wide .pdf-document-caption {
+    flex-wrap: wrap;
+    gap: 0.25rem 0.75rem;
+  }
+  .pdf-document .pdf-document-title,
+  .pdf-document--wide .pdf-document-title {
+    width: 100%;
+  }
+  .pdf-document .pdf-document-status,
+  .pdf-document--wide .pdf-document-status {
+    margin-left: 0;
+  }
+  .pdf-document .pdf-document-original,
+  .pdf-document--wide .pdf-document-original {
+    margin-left: auto;
+  }
+  .pdf-document .pdf-document-pages,
+  .pdf-document--wide .pdf-document-pages {
+    --page-margin: 0 auto 16px;
+  }
+  .pdf-document .pdf-document-pages .page,
+  .pdf-document--wide .pdf-document-pages .page {
+    border-radius: 0;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pdf-document .pdf-document-pages .page.pdf-document-page--pending {
+    animation: none;
+  }
+}
+@-moz-keyframes pdf-page-loading {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+@-webkit-keyframes pdf-page-loading {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+@-o-keyframes pdf-page-loading {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+@keyframes pdf-page-loading {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
 .icon {
   display: block;
   background-color: #d5d5d5;
