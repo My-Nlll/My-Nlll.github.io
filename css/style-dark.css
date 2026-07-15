@@ -1627,6 +1627,32 @@ blockquote.pullquote.left {
 blockquote.pullquote.right {
   float: right;
 }
+.custom-font-block p,
+.custom-font-block li,
+.custom-font-block h1,
+.custom-font-block h2,
+.custom-font-block h3,
+.custom-font-block h4,
+.custom-font-block h5,
+.custom-font-block h6 {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+.custom-font strong,
+.custom-font em,
+.custom-font del {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+.custom-font strong {
+  font-weight: bolder;
+}
+.custom-font em,
+.custom-font del {
+  font-weight: inherit;
+}
 ul li.task-list-item {
   position: relative;
 }
