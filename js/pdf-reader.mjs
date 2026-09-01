@@ -504,34 +504,4 @@ async function loadAndInitializeReaders() {
   }
 }
 
-function scheduleReaders() {
-  if (!readerElements.length) return;
-
-  let started = false;
-  let idleHandle = 0;
-  const start = () => {
-    if (started) return;
-    started = true;
-    warmupObserver.disconnect();
-    if ('cancelIdleCallback' in window) window.cancelIdleCallback(idleHandle);
-    else clearTimeout(idleHandle);
-    loadAndInitializeReaders();
-  };
-
-  const warmupObserver = new IntersectionObserver(entries => {
-    if (entries.some(entry => entry.isIntersecting)) start();
-  }, {
-    root: null,
-    rootMargin: '1200px 0px',
-    threshold: 0
-  });
-
-  readerElements.forEach(element => warmupObserver.observe(element));
-  if ('requestIdleCallback' in window) {
-    idleHandle = window.requestIdleCallback(start, { timeout: 2500 });
-  } else {
-    idleHandle = window.setTimeout(start, 1500);
-  }
-}
-
-scheduleReaders();
+if (readerElements.length) loadAndInitializeReaders();
