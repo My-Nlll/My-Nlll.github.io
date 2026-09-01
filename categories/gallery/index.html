@@ -48,35 +48,11 @@
 
 
 
-
     <link rel="preload" href="/fonts/theme/inter/Inter.woff2" as="font" type="font/woff2" crossorigin>
 
     <link rel="preload" href="/fonts/theme/Noto_Sans_SC/NotoSansSC-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
 
     <link rel="preload" href="/fonts/theme/roboto-mono/RobotoMono-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
-
-    <link rel="preload" href="/fonts/dela-gothic-one/DelaGothicOne-Regular.woff2" as="font" type="font/woff2" crossorigin>
-
-    <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKai-Light.woff2" as="font" type="font/woff2" crossorigin>
-
-    <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKai-Regular.woff2" as="font" type="font/woff2" crossorigin>
-
-    <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKai-Medium.woff2" as="font" type="font/woff2" crossorigin>
-
-    <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKaiMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
-
-    <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKaiMono-Medium.woff2" as="font" type="font/woff2" crossorigin>
-
-    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-zh_hans.otf.woff2" as="font" type="font/woff2" crossorigin>
-
-    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-zh_hant.otf.woff2" as="font" type="font/woff2" crossorigin>
-
-    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-latin.otf.woff2" as="font" type="font/woff2" crossorigin>
-
-    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-ja.otf.woff2" as="font" type="font/woff2" crossorigin>
-
-    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-ko.otf.woff2" as="font" type="font/woff2" crossorigin>
-
 
 
 
@@ -95,15 +71,13 @@
 
     <!-- scripts list from _config.yml -->
     
-    <script src="/js/menu.js"></script>
+    <script src="/js/menu.js" defer></script>
     
-    <script src="/js/format.js"></script>
+    <script src="/js/format.js" defer></script>
     
 
 
 
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
 
 
 
@@ -219,7 +193,7 @@
                 </div>
                 
                     <div class="post-img">
-                        <picture class="responsive-image"><source srcset="/images/Test-Post/featured_image.webp" type="image/webp"><img loading="lazy" src="/images/Test-Post/featured_image.png" alt="画师: ERykk" decoding="async" width="1440" height="1018"></picture>
+                        <picture class="responsive-image"><source srcset="/images/Test-Post/featured_image-480w.webp 480w, /images/Test-Post/featured_image-768w.webp 768w, /images/Test-Post/featured_image-960w.webp 960w, /images/Test-Post/featured_image.webp 1440w" sizes="(max-width: 480px) calc(100vw - 48px), (max-width: 1200px) 320px, 360px" type="image/webp"><img loading="lazy" sizes="(max-width: 480px) calc(100vw - 48px), (max-width: 1200px) 320px, 360px" src="/images/Test-Post/featured_image.png" alt="画师: ERykk" decoding="async" width="1440" height="1018" srcset="/images/Test-Post/featured_image-480w.png 480w, /images/Test-Post/featured_image-768w.png 768w, /images/Test-Post/featured_image-960w.png 960w, /images/Test-Post/featured_image.png 1440w"></picture>
                     </div>
                 
             </div>

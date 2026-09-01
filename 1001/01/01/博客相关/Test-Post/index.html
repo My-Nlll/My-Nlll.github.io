@@ -50,7 +50,6 @@
 
 
 
-
     <link rel="preload" href="/fonts/theme/inter/Inter.woff2" as="font" type="font/woff2" crossorigin>
 
     <link rel="preload" href="/fonts/theme/Noto_Sans_SC/NotoSansSC-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
@@ -63,26 +62,7 @@
 
     <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKai-Regular.woff2" as="font" type="font/woff2" crossorigin>
 
-    <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKai-Medium.woff2" as="font" type="font/woff2" crossorigin>
 
-    <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKaiMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
-
-    <link rel="preload" href="/fonts/lxgw-wenkai/LXGWWenKaiMono-Medium.woff2" as="font" type="font/woff2" crossorigin>
-
-    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-zh_hans.otf.woff2" as="font" type="font/woff2" crossorigin>
-
-    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-zh_hant.otf.woff2" as="font" type="font/woff2" crossorigin>
-
-    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-latin.otf.woff2" as="font" type="font/woff2" crossorigin>
-
-    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-ja.otf.woff2" as="font" type="font/woff2" crossorigin>
-
-    <link rel="preload" href="/fonts/fusion-pixel/fusion-pixel-12px-monospaced-ko.otf.woff2" as="font" type="font/woff2" crossorigin>
-
-
-
-
-    <link rel="stylesheet" href="/vendor/pdfjs/web/pdf_viewer.css">
 
 
     <!-- stylesheets list from _config.yml -->
@@ -99,15 +79,15 @@
 
     <!-- scripts list from _config.yml -->
     
-    <script src="/js/menu.js"></script>
+    <script src="/js/menu.js" defer></script>
     
-    <script src="/js/format.js"></script>
+    <script src="/js/format.js" defer></script>
     
 
 
 
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+    <link rel="stylesheet" href="/vendor/katex/katex.min.css">
 
 
 
@@ -228,7 +208,7 @@
 
     <div class="post-img">
         
-            <picture class="responsive-image"><source srcset="/images/Test-Post/featured_image.webp" type="image/webp"><img loading="eager" fetchpriority="high" src="/images/Test-Post/featured_image.png" alt="画师: ERykk" decoding="async" width="1440" height="1018"></picture>
+            <picture class="responsive-image"><source srcset="/images/Test-Post/featured_image-480w.webp 480w, /images/Test-Post/featured_image-768w.webp 768w, /images/Test-Post/featured_image-960w.webp 960w, /images/Test-Post/featured_image.webp 1440w" sizes="(max-width: 688px) calc(100vw - 48px), (max-width: 1200px) 640px, 720px" type="image/webp"><img loading="eager" fetchpriority="high" sizes="(max-width: 688px) calc(100vw - 48px), (max-width: 1200px) 640px, 720px" src="/images/Test-Post/featured_image.png" alt="画师: ERykk" decoding="async" width="1440" height="1018" srcset="/images/Test-Post/featured_image-480w.png 480w, /images/Test-Post/featured_image-768w.png 768w, /images/Test-Post/featured_image-960w.png 960w, /images/Test-Post/featured_image.png 1440w"></picture>
 
             
             <div class="post-img-meta">
@@ -273,21 +253,22 @@
 <h2 id="9-自定义列表标题">9. 自定义列表标题</h2>
 <p>见本文列表标题.</p>
 <h2 id="10-插入音频-视频">10. 插入音频 &amp; 视频</h2>
-<div id="auto-aplayer-0fbd379cad5e" class="aplayer aplayer-tag-marker" data-auto-aplayer data-audio-src="/audio/Test-Post/audio-example-1.mp3" style="margin-bottom: 20px;">
+<div id="auto-aplayer-572d39110777" class="aplayer aplayer-tag-marker" data-auto-aplayer data-audio-src="/audio/Test-Post/audio-example-1.mp3" style="margin-bottom: 20px;">
   <pre class="aplayer-lrc-content"></pre>
 </div>
 <script>
   (function () {
     var player = new APlayer({
-      element: document.getElementById("auto-aplayer-0fbd379cad5e"),
+      element: document.getElementById("auto-aplayer-572d39110777"),
       narrow: false,
       autoplay: false,
+      preload: "metadata",
       showlrc: false,
       music: {
         title: "おはようオーパーツ",
         author: "相対性理論",
         url: "/audio/Test-Post/audio-example-1.mp3",
-        pic: "/assets/auto-aplayer/67fa25d2c0e02ad38111.jpg",
+        pic: "/assets/auto-aplayer/b7e60b904269261f9b11.jpg",
         lrc: ""
       }
     });
@@ -307,7 +288,7 @@
     <p class="pdf-document-fallback">JavaScript is required for continuous reading. <a href="/pdfs/Test-Post/pdf-example-1.pdf">Open the original PDF.</a></p>
   </noscript>
 </figure>
-<img class="" src="/images/Test-Post/image-example-1.png" alt="" decoding="async" width="971" height="540">
+<img class="" loading="lazy" src="/images/Test-Post/image-example-1.png" alt="" decoding="async" width="971" height="540" srcset="/images/Test-Post/image-example-1-480w.png 480w, /images/Test-Post/image-example-1-768w.png 768w, /images/Test-Post/image-example-1-960w.png 960w, /images/Test-Post/image-example-1.png 971w" sizes="auto, (max-width: 688px) calc(100vw - 48px), (max-width: 1200px) 640px, 720px">
 <h2 id="12-Comment">12. Comment</h2>
 <p>见本文评论区.</p>
 <h2 id="13-双向链接">13. 双向链接</h2>
@@ -321,61 +302,61 @@
 <div style="text-align: center; width: 100%;"><p><strong>番剧推荐十宫格 (?)</strong></p></div>
 <div class="notion-gallery-grid" style="--gallery-cols: 4;">
 
-    <div class="notion-card" style="--col-span: 2; --row-span: 2;"><div class="notion-card-img" style="height: 450px; flex-grow: 0; flex-shrink: 0;"><picture class="responsive-image"><source srcset="/images/Test-Post/gallery-1.webp" type="image/webp"><img loading="lazy" src="/images/Test-Post/gallery-1.jpg" alt="" decoding="async" width="1440" height="2036"></picture></div><div class="notion-card-content" style="min-height: 10px; flex-shrink: 0;">
+    <div class="notion-card" style="--col-span: 2; --row-span: 2;"><div class="notion-card-img" style="height: 450px; flex-grow: 0; flex-shrink: 0;"><picture class="responsive-image"><source srcset="/images/Test-Post/gallery-1-480w.webp 480w, /images/Test-Post/gallery-1-768w.webp 768w, /images/Test-Post/gallery-1-960w.webp 960w, /images/Test-Post/gallery-1.webp 1440w" sizes="auto, (max-width: 688px) calc(100vw - 48px), (max-width: 1200px) 640px, 720px" type="image/webp"><img loading="lazy" src="/images/Test-Post/gallery-1.jpg" alt="" decoding="async" width="1440" height="2036" srcset="/images/Test-Post/gallery-1-480w.jpg 480w, /images/Test-Post/gallery-1-768w.jpg 768w, /images/Test-Post/gallery-1-960w.jpg 960w, /images/Test-Post/gallery-1.jpg 1440w" sizes="auto, (max-width: 688px) calc(100vw - 48px), (max-width: 1200px) 640px, 720px"></picture></div><div class="notion-card-content" style="min-height: 10px; flex-shrink: 0;">
 
 <div style="text-align: center; width: 100%;"><p><strong>少女☆歌劇</strong></p></div>
     
 
 </div></div>
-    <div class="notion-card" style="--col-span: 1; --row-span: 1;"><div class="notion-card-img" style="height: 200px; flex-grow: 0; flex-shrink: 0;"><img loading="lazy" src="/images/Test-Post/gallery-2.jpg" alt="" decoding="async" width="681" height="1022"></div><div class="notion-card-content" style="min-height: 10px; flex-shrink: 0;">
+    <div class="notion-card" style="--col-span: 1; --row-span: 1;"><div class="notion-card-img" style="height: 200px; flex-grow: 0; flex-shrink: 0;"><img loading="lazy" src="/images/Test-Post/gallery-2.jpg" alt="" decoding="async" width="681" height="1022" srcset="/images/Test-Post/gallery-2-480w.jpg 480w, /images/Test-Post/gallery-2.jpg 681w" sizes="auto, (max-width: 688px) calc(100vw - 48px), (max-width: 1200px) 640px, 720px"></div><div class="notion-card-content" style="min-height: 10px; flex-shrink: 0;">
 
 <div style="text-align: center; width: 100%;"><p><strong>輪るピングドラム</strong></p></div>
     
 
 </div></div>
-    <div class="notion-card" style="--col-span: 1; --row-span: 1;"><div class="notion-card-img" style="height: 200px; flex-grow: 0; flex-shrink: 0;"><img loading="lazy" src="/images/Test-Post/gallery-3.jpg" alt="" decoding="async" width="803" height="1146"></div><div class="notion-card-content" style="min-height: 10px; flex-shrink: 0;">
+    <div class="notion-card" style="--col-span: 1; --row-span: 1;"><div class="notion-card-img" style="height: 200px; flex-grow: 0; flex-shrink: 0;"><img loading="lazy" src="/images/Test-Post/gallery-3.jpg" alt="" decoding="async" width="803" height="1146" srcset="/images/Test-Post/gallery-3-480w.jpg 480w, /images/Test-Post/gallery-3-768w.jpg 768w, /images/Test-Post/gallery-3.jpg 803w" sizes="auto, (max-width: 688px) calc(100vw - 48px), (max-width: 1200px) 640px, 720px"></div><div class="notion-card-content" style="min-height: 10px; flex-shrink: 0;">
 
 <div style="text-align: center; width: 100%;"><p><strong>四畳半神話大系</strong></p></div>
     
 
 </div></div>
-    <div class="notion-card" style="--col-span: 1; --row-span: 1;"><div class="notion-card-img" style="height: 200px; flex-grow: 0; flex-shrink: 0;"><img loading="lazy" src="/images/Test-Post/gallery-4.jpg" alt="" decoding="async" width="400" height="566"></div><div class="notion-card-content" style="min-height: 10px; flex-shrink: 0;">
+    <div class="notion-card" style="--col-span: 1; --row-span: 1;"><div class="notion-card-img" style="height: 200px; flex-grow: 0; flex-shrink: 0;"><img loading="lazy" src="/images/Test-Post/gallery-4.jpg" alt="" decoding="async" width="400" height="566" srcset="/images/Test-Post/gallery-4.jpg 400w" sizes="auto, (max-width: 688px) calc(100vw - 48px), (max-width: 1200px) 640px, 720px"></div><div class="notion-card-content" style="min-height: 10px; flex-shrink: 0;">
 
 <div style="text-align: center; width: 100%;"><p><strong>少女革命ウテナ</strong></p></div>
     
 
 </div></div>
-    <div class="notion-card" style="--col-span: 1; --row-span: 1;"><div class="notion-card-img" style="height: 200px; flex-grow: 0; flex-shrink: 0;"><img loading="lazy" src="/images/Test-Post/gallery-5.jpg" alt="" decoding="async" width="400" height="566"></div><div class="notion-card-content" style="min-height: 10px; flex-shrink: 0;">
+    <div class="notion-card" style="--col-span: 1; --row-span: 1;"><div class="notion-card-img" style="height: 200px; flex-grow: 0; flex-shrink: 0;"><img loading="lazy" src="/images/Test-Post/gallery-5.jpg" alt="" decoding="async" width="400" height="566" srcset="/images/Test-Post/gallery-5.jpg 400w" sizes="auto, (max-width: 688px) calc(100vw - 48px), (max-width: 1200px) 640px, 720px"></div><div class="notion-card-content" style="min-height: 10px; flex-shrink: 0;">
 
 <div style="text-align: center; width: 100%;"><p><strong>ウマ娘 プリティーダービー Season 2</strong></p></div>
     
 
 </div></div>
-    <div class="notion-card" style="--col-span: 1; --row-span: 1;"><div class="notion-card-img" style="height: 200px; flex-grow: 0; flex-shrink: 0;"><img loading="lazy" src="/images/Test-Post/gallery-6.jpg" alt="" decoding="async" width="400" height="566"></div><div class="notion-card-content" style="min-height: 10px; flex-shrink: 0;">
+    <div class="notion-card" style="--col-span: 1; --row-span: 1;"><div class="notion-card-img" style="height: 200px; flex-grow: 0; flex-shrink: 0;"><img loading="lazy" src="/images/Test-Post/gallery-6.jpg" alt="" decoding="async" width="400" height="566" srcset="/images/Test-Post/gallery-6.jpg 400w" sizes="auto, (max-width: 688px) calc(100vw - 48px), (max-width: 1200px) 640px, 720px"></div><div class="notion-card-content" style="min-height: 10px; flex-shrink: 0;">
 
 <div style="text-align: center; width: 100%;"><p><strong>違国日記</strong></p></div>
     
 
 </div></div>
-    <div class="notion-card" style="--col-span: 1; --row-span: 1;"><div class="notion-card-img" style="height: 200px; flex-grow: 0; flex-shrink: 0;"><img loading="lazy" src="/images/Test-Post/gallery-7.jpg" alt="" decoding="async" width="400" height="562"></div><div class="notion-card-content" style="min-height: 10px; flex-shrink: 0;">
+    <div class="notion-card" style="--col-span: 1; --row-span: 1;"><div class="notion-card-img" style="height: 200px; flex-grow: 0; flex-shrink: 0;"><img loading="lazy" src="/images/Test-Post/gallery-7.jpg" alt="" decoding="async" width="400" height="562" srcset="/images/Test-Post/gallery-7.jpg 400w" sizes="auto, (max-width: 688px) calc(100vw - 48px), (max-width: 1200px) 640px, 720px"></div><div class="notion-card-content" style="min-height: 10px; flex-shrink: 0;">
 
 <div style="text-align: center; width: 100%;"><p><strong>フリクリ</strong></p></div>
     
 
 </div></div>
-    <div class="notion-card" style="--col-span: 2; --row-span: 2;"><div class="notion-card-img" style="height: 450px; flex-grow: 0; flex-shrink: 0;"><img loading="lazy" src="/images/Test-Post/gallery-10.jpg" alt="" decoding="async" width="1057" height="1498"></div><div class="notion-card-content" style="min-height: 10px; flex-shrink: 0;">
+    <div class="notion-card" style="--col-span: 2; --row-span: 2;"><div class="notion-card-img" style="height: 450px; flex-grow: 0; flex-shrink: 0;"><img loading="lazy" src="/images/Test-Post/gallery-10.jpg" alt="" decoding="async" width="1057" height="1498" srcset="/images/Test-Post/gallery-10-480w.jpg 480w, /images/Test-Post/gallery-10-768w.jpg 768w, /images/Test-Post/gallery-10-960w.jpg 960w, /images/Test-Post/gallery-10.jpg 1057w" sizes="auto, (max-width: 688px) calc(100vw - 48px), (max-width: 1200px) 640px, 720px"></div><div class="notion-card-content" style="min-height: 10px; flex-shrink: 0;">
 
 <div style="text-align: center; width: 100%;"><p><strong>千と千尋の神隠し</strong></p></div>
     
 
 </div></div>
-    <div class="notion-card" style="--col-span: 1; --row-span: 1;"><div class="notion-card-img" style="height: 200px; flex-grow: 0; flex-shrink: 0;"><img loading="lazy" src="/images/Test-Post/gallery-8.jpg" alt="" decoding="async" width="400" height="566"></div><div class="notion-card-content" style="min-height: 10px; flex-shrink: 0;">
+    <div class="notion-card" style="--col-span: 1; --row-span: 1;"><div class="notion-card-img" style="height: 200px; flex-grow: 0; flex-shrink: 0;"><img loading="lazy" src="/images/Test-Post/gallery-8.jpg" alt="" decoding="async" width="400" height="566" srcset="/images/Test-Post/gallery-8.jpg 400w" sizes="auto, (max-width: 688px) calc(100vw - 48px), (max-width: 1200px) 640px, 720px"></div><div class="notion-card-content" style="min-height: 10px; flex-shrink: 0;">
 
 <div style="text-align: center; width: 100%;"><p><strong>スペース☆ダンディ</strong></p></div>
     
 
 </div></div>
-    <div class="notion-card" style="--col-span: 1; --row-span: 1;"><div class="notion-card-img" style="height: 200px; flex-grow: 0; flex-shrink: 0;"><img loading="lazy" src="/images/Test-Post/gallery-9.jpg" alt="" decoding="async" width="400" height="568"></div><div class="notion-card-content" style="min-height: 10px; flex-shrink: 0;">
+    <div class="notion-card" style="--col-span: 1; --row-span: 1;"><div class="notion-card-img" style="height: 200px; flex-grow: 0; flex-shrink: 0;"><img loading="lazy" src="/images/Test-Post/gallery-9.jpg" alt="" decoding="async" width="400" height="568" srcset="/images/Test-Post/gallery-9.jpg 400w" sizes="auto, (max-width: 688px) calc(100vw - 48px), (max-width: 1200px) 640px, 720px"></div><div class="notion-card-content" style="min-height: 10px; flex-shrink: 0;">
 
 <div style="text-align: center; width: 100%;"><p><strong>キルラキル</strong></p></div>
     

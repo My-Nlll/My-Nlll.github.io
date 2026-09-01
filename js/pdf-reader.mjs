@@ -9,6 +9,17 @@ function assetUrl(relativePath) {
   return new URL(relativePath, vendorBase).href;
 }
 
+function loadViewerStyles() {
+  return new Promise((resolve, reject) => {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = assetUrl('web/pdf_viewer.css');
+    link.onload = resolve;
+    link.onerror = () => reject(new Error('Unable to load the local PDF.js styles.'));
+    document.head.append(link);
+  });
+}
+
 function readNumber(element, name, fallback, minimum = 1) {
   const value = Number.parseFloat(element.dataset[name]);
   return Number.isFinite(value) && value >= minimum ? value : fallback;
@@ -79,6 +90,7 @@ class ContinuousPdfReader {
     this.currentRotation = 0;
     this.lastContainerWidth = 0;
     this.resizeFrame = 0;
+    this.renderQueue = Promise.resolve();
     this.destroyed = false;
     this.config = {
       source: new URL(element.dataset.pdfSrc, document.baseURI).href,
@@ -209,16 +221,20 @@ class ContinuousPdfReader {
 
   setupObservers() {
     this.intersectionObserver = new IntersectionObserver(entries => {
+      const entering = [];
       for (const observed of entries) {
         const pageNumber = Number(observed.target.dataset.pageNumber);
         if (observed.isIntersecting) {
           this.visiblePages.add(pageNumber);
           this.currentPageNumber = pageNumber;
-          this.renderPage(pageNumber);
+          entering.push(observed);
         } else {
           this.visiblePages.delete(pageNumber);
         }
       }
+      entering
+        .sort((left, right) => Math.abs(left.boundingClientRect.top) - Math.abs(right.boundingClientRect.top))
+        .forEach(observed => this.renderPage(Number(observed.target.dataset.pageNumber)));
       this.enforceRenderLimit();
     }, {
       root: null,
@@ -311,7 +327,12 @@ class ContinuousPdfReader {
     if (entry.rendered || entry.renderPromise) return entry.renderPromise;
 
     const renderRevision = entry.renderRevision;
-    entry.renderPromise = entry.pageView.draw()
+    const queuedRender = this.renderQueue.then(() => {
+      if (this.destroyed || renderRevision !== entry.renderRevision || entry.rendered) return;
+      return entry.pageView.draw();
+    });
+    this.renderQueue = queuedRender.catch(() => {});
+    entry.renderPromise = queuedRender
       .then(() => {
         const canvas = entry.pageView.canvas;
         const renderCompleted = entry.pageView.renderingState === this.viewer.RenderingStates.FINISHED;
@@ -453,11 +474,12 @@ class ContinuousPdfReader {
   }
 }
 
-async function initializeReaders() {
-  if (!readerElements.length) return;
-
+async function loadAndInitializeReaders() {
   try {
-    const pdfjsLib = await import(assetUrl('build/pdf.min.mjs'));
+    const [pdfjsLib] = await Promise.all([
+      import(assetUrl('build/pdf.min.mjs')),
+      loadViewerStyles()
+    ]);
     globalThis.pdfjsLib = pdfjsLib;
     pdfjsLib.GlobalWorkerOptions.workerSrc = assetUrl('build/pdf.worker.min.mjs');
     const viewer = await import(assetUrl('web/pdf_viewer.mjs'));
@@ -482,4 +504,34 @@ async function initializeReaders() {
   }
 }
 
-initializeReaders();
+function scheduleReaders() {
+  if (!readerElements.length) return;
+
+  let started = false;
+  let idleHandle = 0;
+  const start = () => {
+    if (started) return;
+    started = true;
+    warmupObserver.disconnect();
+    if ('cancelIdleCallback' in window) window.cancelIdleCallback(idleHandle);
+    else clearTimeout(idleHandle);
+    loadAndInitializeReaders();
+  };
+
+  const warmupObserver = new IntersectionObserver(entries => {
+    if (entries.some(entry => entry.isIntersecting)) start();
+  }, {
+    root: null,
+    rootMargin: '1200px 0px',
+    threshold: 0
+  });
+
+  readerElements.forEach(element => warmupObserver.observe(element));
+  if ('requestIdleCallback' in window) {
+    idleHandle = window.requestIdleCallback(start, { timeout: 2500 });
+  } else {
+    idleHandle = window.setTimeout(start, 1500);
+  }
+}
+
+scheduleReaders();
