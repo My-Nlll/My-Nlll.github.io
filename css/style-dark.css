@@ -1653,6 +1653,38 @@ blockquote.pullquote.right {
 .custom-font del {
   font-weight: inherit;
 }
+.trunic {
+  font-style: normal;
+  font-synthesis: none;
+  font-kerning: normal;
+  font-feature-settings: "liga" 1, "kern" 1;
+  letter-spacing: 0;
+  word-spacing: normal;
+  line-height: 1.6;
+  text-transform: none;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+.trunic.trunic-block {
+  display: block;
+  margin: 1rem 0;
+}
+.trunic .trunic-paragraph {
+  display: block;
+}
+.trunic .trunic-paragraph + .trunic-paragraph {
+  margin-top: 1rem;
+}
+.trunic .trunic-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+.trunic .trunic-glyph {
+  display: inline-block;
+}
+.trunic .trunic-literal {
+  font-family: 'Inter', 'Noto Sans SC', 'Microsoft YaHei', 'PingFang SC', helvetica, arial, sans-serif;
+}
 ul li.task-list-item {
   position: relative;
 }

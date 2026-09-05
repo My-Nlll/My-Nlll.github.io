@@ -1,0 +1,14 @@
+Tunic font
+
+Original script by Andrew Shouldice for the game Tunic.
+Font by Adrián Jiménez Pascual (dirdam.github.io).
+
+Source: https://github.com/dirdam/fonts/tree/main/tunic
+Original font: https://github.com/dirdam/fonts/blob/main/tunic/Tunic.otf
+License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+
+The original OTF is distributed unchanged. The website uses a WOFF2 derivative
+produced by its font-subsetting pipeline; glyph shapes are not edited.
+Some punctuation, numbers and symbols are the font author's extensions rather
+than characters in the original game.
